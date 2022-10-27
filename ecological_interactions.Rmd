@@ -1,0 +1,191 @@
+---
+title: "Ecological Interactions & Dynamics"
+subtitle: "Principles in Fisheries Science"
+author: "Max Lindmark"
+institute: "Swedish University of Agricultural Sciences"
+date: "November 3, 2022"
+output:
+  xaringan::moon_reader:
+    css: ["xaringan-themer.css", "theme.css"]
+    lib_dir: libs
+    nature:
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r preamble, include=FALSE, cache=FALSE}
+source(here::here("preamble.R"))
+do.call(knitr::opts_chunk$set, knitr_opts)
+```
+
+```{r libs, include=FALSE}
+library(tidyverse)
+```
+
+# Who am I?
+
+* MSc in Applied Marine and Fisheries Ecology, Aberdeen UK
+
+* PhD in Marine Ecology, theoretical population and community ecology
+
+* Postdoc at SLU on spatiotemporal aspects of cod-flounder interactions
+
+* [max.lindmark@slu.se](mailto:max.lindmark@slu.se)
+
+---
+
+# Who are you ... ?
+
+---
+
+# Plan for the 4-session lecture on Ecological interactions and Dynamics
+
+* 1: Brief recap on population dynamics
+
+* 2: Species interactions!
+
+* 3: How can we quantify species interactions?
+
+* 4: How are species interactions included in fisheries research?
+
+---
+
+# Plan for the 4-session lecture on Ecological interactions and Dynamics
+
+* Have questions?
+
+  * Just interrupt and ask, write in chat or ask during our break. Thanks!
+
+---
+
+# Motivating questions
+
+* We want to know what makes fish abundance vary through time and space...
+  
+  * For conservation
+  
+  * For sustainable management of marine resources
+  
+  * Because it is a basic scientific question (ecology is a young discipline!)
+  
+
+---
+
+# Recap
+
+* **Population ecology**: how and why animal populations change in numbers over time and space
+
+* **Community ecology**: how and why species abundance, composition, diversity and structure change over time and space
+
+* **Food web ecology**: energy transfers (feeding links) between species in food webs
+
+---
+
+# Population ecology
+
+- MARK KOT!!!!
+
+---
+
+```{r, echo=TRUE}
+r <- 0.1; K <- 40; N_ini <- 2; t <- 100
+N <- rep(NA, t)
+N[1] <- N_ini
+```
+
+```{r}
+for (i in 2:t) {
+N[i] <- r * N[i-1] * (1-(N[i - 1]/K)) + N[i-1]
+}
+
+d <- data.frame(N = N, t = 1:t)
+
+ggplot(d, aes(t, N)) +
+  geom_line() + 
+  ggtitle("Logistic growth curve", subtitle = "r = 0.1 and K = 40")
+```
+
+---
+
+# 2. Species interactions
+* Mutualism
+
+* Commensalism
+
+* **Predation**
+
+* **Competition**
+
+---
+
+# Predation
+
+```{r big fish, echo=FALSE, fig.cap="Big fish eat small fish", out.width = '75%'}
+knitr::include_graphics("images/big_fish.png")
+```
+
+---
+
+MARK KOT LOTKA VOLTERRA
+
+---
+
+# Competition
+
+* Scramble / Exploitation
+
+* Already touched briefly on intraspecific interactions
+
+```{r interspecific competition, echo=FALSE, fig.cap="Interspecific competition", out.width = '70%'}
+knitr::include_graphics("images/competition.png")
+```
+
+---
+
+LOTKA VOLTERRA COMPETITION MODEL
+
+---
+
+# 3. Quantifying species interactions in natural systems
+
+* Diet data
+
+* Abundance data (e.g., from scientific trawl surveys)
+
+* Apply statistical models
+
+---
+
+* Carrol paper?
+
+* Neuenfeldt paper?
+
+* Casini trophic cascade paper?
+
+---
+
+# 4. Species interactions in fisheries research
+* Statistical / Mathematical approaches
+
+---
+
+# In stock assessment
+* Natural mortality
+
+* SMS model
+
+---
+
+# Food web models for strategic advice
+
+* Based on "first principles"
+
+* Ken Andersen
+
+* mizer graphical abstract
+
+```{r, echo=FALSE, out.width = '75%'}
+knitr::include_graphics("images/big_fish.png")
+```
+
+
