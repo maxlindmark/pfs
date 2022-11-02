@@ -4,8 +4,6 @@ format:
     theme: [default, custom.css]
     transition: fade
     slide-number: true
-    auto-play-media: true
-    cap-location: top
 ---
 
 ```{r libs, include=FALSE}
@@ -38,7 +36,7 @@ Swedish University of Agricultural Sciences
 
 ## Who are you ... ?
 
-## Plan for the 4-session lecture on Ecological interactions and Dynamics
+## Plan for today
 
 * Theoretical
 
@@ -56,11 +54,15 @@ Swedish University of Agricultural Sciences
 theoretical = mathematical
 :::
 
-## Plan for the 4-session lecture on Ecological interactions and Dynamics
+## Plan for today
 
 * Have questions?
 
   * Just interrupt and ask, write in chat or ask during our break. Thanks!
+  
+* Slides can be found here: <https://github.com/maxlindmark/pfs>
+
+* And on Canvas
 
 ## Motivating questions
 
@@ -72,6 +74,8 @@ theoretical = mathematical
   
   * Because it is a basic scientific question (ecology is a young discipline!)
   
+
+# 1. Brief recap on population ecology
 
 ## Recap
 
@@ -116,6 +120,11 @@ Per capita rate of change:
 $$\frac{1}{N}\frac{dN}{dt}$$ 
 
 
+## The simplest population model
+
+$$r = b - d$$
+
+$$\frac{dN}{dt}=rN$$
 
 
 ## The simplest population model
@@ -125,7 +134,6 @@ $$\frac{1}{N}\frac{dN}{dt}$$
 $$N(t)=N_0e^{rt}$$
 
 * Exponential growth for positive $r$ and exponential decline for negative $r$
-
 
 
 ## The simplest population model
@@ -140,17 +148,18 @@ d <- data.frame(N = n) %>%
          pc_dNdt = (r*N)/N)
 ```
 
-
 ## The simplest population model
 
 ```{r, echo=FALSE}
+#| fig-align: "center"
+
 p1 <- ggplot(d, aes(N, pc_dNdt)) +
-  geom_line() + 
+  geom_line(size = 1.2) + 
   labs(y = "(1/N) dN/dt", x = "Population size (N)") +
   ggtitle("Per-capita growth rate", subtitle = "r=0.1")
   
 p2 <- ggplot(d, aes(N, dNdt)) +
-  geom_line() + 
+  geom_line(size = 1.2) + 
   labs(y = "dN/dt", x = "Population size (N)") +
   ggtitle("Population growth rate", subtitle = "r=0.1")
 
@@ -161,16 +170,17 @@ p1+p2
 * Population growth rates increase with size!
 
 
-
 ## The simplest population model
 
 * Equilibrium?
 
 $$\frac{dN}{dt}=rN$$
 
+## The simplest population model
+
 * What's wrong with this model?
 
-
+$$\frac{dN}{dt}=rN$$
 
 ## Population regulation
 
@@ -264,14 +274,16 @@ d <- data.frame(N = n) %>%
 ## The logistic growth model
 
 ```{r, echo=FALSE}
+#| fig-align: "center"
+
 p1 <- ggplot(d, aes(N, pc_dNdt)) +
-  geom_line() + 
+  geom_line(size = 1.2) + 
   labs(y = "(1/N) dN/dt", x = "Population size (N)") +
   ggtitle("Per-capita growth rate", subtitle = "r=0.1") + 
   coord_cartesian(expand = 0, ylim = c(0, 0.1), xlim = c(0, 41))
   
 p2 <- ggplot(d, aes(N, dNdt)) +
-  geom_line() + 
+  geom_line(size = 1.2) + 
   labs(y = "dN/dt", x = "Population size (N)") +
   ggtitle("Population growth rate", subtitle = "r=0.1") +
   coord_cartesian(expand = 0, ylim = c(0, 1), xlim = c(0, 41))
@@ -301,10 +313,12 @@ N[i] <- r * N[i-1] * (1-(N[i - 1]/K)) + N[i-1]
 ## The logistic growth model
 
 ```{r}
+#| fig-align: "center"
+
 d <- data.frame(N = N, t = 1:t)
 
 ggplot(d, aes(t, N)) +
-  geom_line() + 
+  geom_line(size = 1.2) + 
   ggtitle("Logistic growth curve", subtitle = "r = 0.1 and K = 40")
 ```
 
@@ -314,7 +328,7 @@ $$\frac{dN}{dt}=rN(1-\frac{N}{K})$$
 
 * Another useful technique is to find the equilibria with algebra 
 
-* set $\frac{dN}{dt}=0$
+* Set $\frac{dN}{dt}=0$
 
 ::: {.notes}
 remind them of equilibria
@@ -350,16 +364,20 @@ $$\frac{dN}{dt}=rN(1-\frac{N}{K})$$
 p1 + theme(aspect.ratio = 1/2)
 ```
 
-
+::: {.notes}
+There are many other forms of dd...
+:::
 
 ## The logistic growth model
 
-* ... There are other models where growth depends on population size, e.g., Gompertz
+* ... There are other models where growth depends on population size, e.g., Gompertz, and it may of course have different shape the linear!
 
 ```{r}
 p1 + theme(aspect.ratio = 1/2)
 ```
 
+
+# 2. Species interactions
 
 ## 2. Species interactions
 
@@ -373,16 +391,27 @@ p1 + theme(aspect.ratio = 1/2)
 
 * Commensalism (0, +)
 
+::: {.notes}
+always individuals interacting! Inter or intraspecific?
+:::
+
 
 ## Predation
 
 ![](images/big_fish.png){fig-align="center"}
+
+::: {.notes}
+Staying in the theoretical lane a bit longer, we'll look at species interactions with a set of **coupled** ODE's 
+:::
+
 
 ## The original predator-prey model
 
 * Lotka-Volterra
 
 * Published independently by Alfred J. Lotka and Vito Volterra in 1925 & 1926
+
+* Widely used and analyzed today
 
 ## The original predator-prey model
 
@@ -403,11 +432,12 @@ p1 + theme(aspect.ratio = 1/2)
 
 ![Umberto D'Ancona](images/umberto.png){fig-align="left"}
 
+::: {.notes}
+Volterra's enquiry was inspired through his interactions with the marine biologist Umberto D'Ancona, who was courting his daughter Luisa Volterra at the time and later was to become his son-in-law. D'Ancona studied the fish catches in the Adriatic Sea and had noticed that the percentage of Selachians caught had increased during the years of World War I (1914â18), and the relative abundance of prey followed the opposite pattern. This puzzled him, as the fishing effort had been very much reduced during the war years. 
 :::
 
-::: {.notes}
-Volterra's enquiry was inspired through his interactions with the marine biologist Umberto D'Ancona, who was courting his daughter Luisa Volterra at the time and later was to become his son-in-law. D'Ancona studied the fish catches in the Adriatic Sea and had noticed that the percentage of Selachians caught had increased during the years of World War I (1914–18), and the relative abundance of prey followed the opposite pattern. This puzzled him, as the fishing effort had been very much reduced during the war years. 
 :::
+
 
 ## The original predator-prey model
 
@@ -421,16 +451,18 @@ Volterra's enquiry was inspired through his interactions with the marine biologi
 
 ## The original predator-prey model
 
-* The equations Volterra wrote down to describe Umberto's system where:
+* Volterra wrote down these eqns to Umberto's:
 
 $$\frac{dN}{dt}=\alpha N - \beta NP$$
 $$\frac{dP}{dt}=\delta \beta NP-\gamma P$$
 
-* How does the prey grow in absence of predators? How does the predator population decline in the absence of prey? What is $b$?
+* How does the prey grow in absence of predators? How does the predator population decline in the absence of prey? What is $\beta$ and $\delta$?
 
 ::: {.notes}
-coupled differential equations
-exponentially
+1) exponentially (set P = 0 and it becomes the first growth model we looked at)
+2) Also exponentially
+3) Predation/attack rate and conversion efficiency
+* The cost to the victim is always greater than the benefit to the enemy. 
 :::
 
 ## Lotka-Volterra model
@@ -441,28 +473,41 @@ $$\frac{dN}{dt}=\alpha N - \beta NP$$
 
 $$\frac{dP}{dt}=\delta \beta NP-\gamma P$$
 
-* "Attack rate" given by:
+## Lotka-Volterra model
 
-$$\beta N$$
+* Zero-net growth isoclines
 
-## Functional respose
+* set $\frac{dN}{dt}$ or $\frac{dP}{dt}$ = 0, break out $P$ and $N$
 
-* Type I
+$$\frac{dN}{dt}=\alpha N - \beta NP$$
 
-```{r}
-n <- 0:50
-beta <- 0.2
-delta <- 0.5
+$$\frac{dP}{dt}=\delta \beta NP-\gamma P$$
 
-d <- data.frame(N = n) %>% 
-  mutate(predation = beta*delta*N)
+::: {.notes}
+How do we find the isoclines? what do they mean here
+:::
 
-ggplot(d, aes(N, predation)) +
-  geom_line() + 
-  labs(y = "Predation rate", x = "Prey population size (N)") +
-  coord_cartesian(expand = 0) + 
-  theme(aspect.ratio = 1/2)
-```
+
+## Prey zero growth isoclines
+
+$$\frac{dN}{dt}=\alpha N - \beta NP$$
+
+$$0=\alpha N - \beta NP$$
+$$0=\alpha - \beta P$$
+$$P=\frac{\alpha}  {\beta} $$
+
+## Predator zero growth isoclines
+
+$$\frac{dP}{dt}=\delta \beta NP-\gamma P$$
+
+$$0=\delta \beta NP-\gamma P$$
+$$0=\delta \beta N-\gamma$$
+
+$$P=\frac{\gamma}  {\delta\beta} $$
+
+::: {.notes}
+This shows us that the prey increase whenever the predator abundance is below a certain value. We found that value above, and it is P=r/a. When does the predator increase or decrease? When the prey is above or below a particular value, N=m/(ea). The only time these populations are at rest is when both of these are true.
+:::
 
 ## Lotka-Volterra model
 
@@ -491,23 +536,32 @@ lv_results <- ode(init, times, deriv, pars)
 * A cyclic model
 
 ```{r}
+#| fig-align: "center"
+
 lv_results %>% 
   data.frame() %>% 
   gather(var, pop, -time) %>% 
   mutate(var = if_else(var == "x", "Prey", "Predator")) %>% 
   ggplot(aes(x = time, y = pop, color = var)) +
-    geom_line() +
-    scale_color_brewer(NULL, palette = "Set1") +
+    geom_line(size = 1.2) +
+    scale_color_brewer(palette = "Set2") +
     labs(subtitle = paste(names(pars), pars, sep = " = ", collapse = "; "),
          x = "Time", y = "Population density") + 
     theme(legend.position = "bottom")
 ```
+
+::: {.notes}
+Prey increase until predators are sufficiently abundant to control them, at which point they decline, leading to the decline of preadtors. The predator peaks lag behind the prey peaks
+:::
+
 
 ## Lotka-Volterra model
 
 * A cyclic model: phase plot
 
 ```{r}
+#| fig-align: "center"
+
 lv_results %>% 
   data.frame() %>% 
   rename(prey = x, predator = y) %>% 
@@ -532,16 +586,155 @@ Changes in the abundance of Lynx (Lynx canadensis) [top] and various prey specie
 
 ## Other predator-prey models
 
-* Rosenzweig-MacArthur
+* How can we incorporate more realism into the Lotka-Volterra model?
 
-## Another functional response!
+::: {.notes}
+predator functional response, prey growth rate (numerical response), predation depending on no. predators?
+:::
 
-* Type II
+## Functional respose
+
+* "Kill rate", in the LV model given by:
+
+$$\beta N$$
+
+* We call this a Type I functional response
+
+```{r}
+#| fig-align: "center"
+
+n <- 0:50
+beta <- 0.2
+delta <- 0.5
+
+d <- data.frame(N = n) %>% 
+  mutate(predation = beta*delta*N)
+
+ggplot(d, aes(N, predation)) +
+  geom_line(size = 1.2) + 
+  labs(y = "Predation rate", x = "Prey population size (N)") +
+  coord_cartesian(expand = 0) + 
+  theme(aspect.ratio = 1/2)
+```
+
+## Other functional responses!
+
+* Type I: $\alpha N$
 
 
-## Type III functional respionse
+* Type II: $\frac {\alpha N}{1+\alpha h N}$
 
-* OK
+
+* Type III: $\frac {\alpha N^c}{1+\alpha h N^c}$
+
+
+## Other functional responses!
+
+```{r, echo=TRUE}
+n <- seq(0, 2, 0.1); a <- 0.5; b <- 1; c <- 3
+
+d <- data.frame(N = n) %>% 
+  mutate("Type I" = a*N,
+         "Type II" = N / (b + N),
+         "Type III" = N^c / (b + N^c)) %>% 
+  pivot_longer(2:4)
+```
+
+```{r echo=FALSE}
+#| fig-align: "center"
+
+ggplot(d, aes(N, value, color = name)) +
+  geom_line(size = 2) + 
+  labs(y = "Prey killed per predator",
+       x = "Prey density",
+       color = "") +
+  scale_color_brewer(palette = "Set2") +
+  theme(legend.position = "bottom")
+```
+
+::: {.notes}
+a is attack rate, and h is handling time. We refer to this functional response as a type II functional response (Fig. 8.6). As N gets really big, this fraction approaches 1/h, 
+
+When is which FR reasonable?
+
+Ecologists refer to this activity as “handling” and the time required to do that as handling time. Buzz Holling (1959) developed a mathematical form for a functional response with prey-dependent predation that includes handling time: 
+:::
+
+## Other numerical responses!
+
+* I.e., the how the predators population growth rate varies with N, or dP/dt vs. N.
+
+## Other predator-prey models
+
+* Endless possibilities
+
+* Let's look at the Rosenzweig and MacArthur model
+
+::: footer
+Rosenzweig & MacArthur (1963) American Naturalist
+:::
+
+## Rosenzweig and MacArthur
+
+$$\frac{dN}{dt}=r N(1-\alpha N) - \frac{\alpha N}{1+\alpha h N}P$$
+
+$$\frac{dP}{dt}=e\frac{\alpha N}{1+\alpha h N}P -m P$$
+
+::: {.notes}
+What's going on here? Negative carrying capacity and type II
+:::
+
+## Rosenzweig and MacArthur
+
+```{r, echo=TRUE}
+# https://hankstevens.github.io/Primer-of-Ecology/cr.html
+cr_RM_pred <- function(time, y, p){
+  N <- y[1]
+  P <- y[2]
+  with(as.list(p), {
+    Ndot <- r*N*(1 - alpha*N) - a*N*P/(1 + a*h*N) # prey
+    Pdot <- e*a*N*P/(1 + a*h*N) - m*P # predator
+    return(list(c(Ndot, Pdot)))
+  })
+}
+
+t <- 0:200
+y0 <- c(N = 100, P = 3)
+
+p <- list(r = 0.8, alpha = 0.001, a = 0.02, e = 0.04, m = .15, h = .1)
+
+outdf <- as.data.frame( ode(y0, t, cr_RM_pred,  p) ) %>%
+  pivot_longer(-time, names_to = "Population", values_to = "Abundance")
+```
+
+## Rosenzweig and MacArthur
+
+```{r}
+#| fig-align: "center"
+
+ggplot(outdf, aes(time, Abundance, colour = Population)) +
+  geom_line(size = 1.2) + 
+  scale_color_brewer(palette = "Set2") +
+  labs(x = "Time")
+```
+
+::: {.notes}
+A damped oscillation means an oscillation that fades away with time. Eventually we will reach an equilibrium
+:::
+
+## Rosenzweig and MacArthur
+
+* Paradox of enrichment!
+
+![](images/paradox.png){fig-align="center"}
+
+::: {.notes}
+In each case, increasing the supply of limiting nutrients or energy tends
+to destroy the steady state. Thus man must be very careful in attempting to
+enrich an ecosystem in order to increase its food yield. There is a real chance
+that such activity may result in decimation of the food species that are wanted
+in greater abundance.
+:::
 
 
 ## Other types of cycles...
@@ -551,23 +744,37 @@ Changes in the abundance of Lynx (Lynx canadensis) [top] and various prey specie
 
 ## Cohort-cycles
 
-* We have seen predator-prey cycles, but populations can also cycle for other reasons!
+![](images/cohort_cycles.png){fig-align="center"}
 
-
+::: footer
+de Roos *et al* (2003) Ecology Letters
+:::
 
 ## Competition
 
+* Interference
+
 * Scramble / Exploitation
 
-* Already touched briefly on intraspecific interactions / density dependence!
+::: {layout-ncol=2}
+![](images/scramble.png){fig-width=80%}
 
-![](images/competition.png){fig-align="center"}
+![](images/deer.png){fig-width=80%}
+:::
 
+::: {.notes}
+Which one have we already talked about?
+
+Male-male competition in red deer during rut is an example of interference competition within a species.
+
+Scramble competition, occurs indirectly when organisms both use a common limiting resource or shared food item. Instead of fighting or exhibiting aggressive behavior in order to win resources, exploitative competition occurs when resource use by one organism depletes the total amount available for other organism
+:::
 
 ## L-V competition model
 
 $$\frac{dN_1}{dt}=r_1N_1(\frac{K_1-N_1-\alpha_{12}N_2}{K_1})$$
 $$\frac{dN_2}{dt}=r_2N_1(\frac{K_2-N_2-\alpha_{21}N_1}{K_2})$$
+
 ::: {.notes}
 alpha12 expresses the effect of one member of Population 2 on the growth rate of Population 1
 alpha21 expresses the effect of one member of Population 1 on the growth rate of Population 2.
@@ -581,8 +788,6 @@ $$\frac{dN_1}{dt}=r_1N_1(\frac{K_1-N_1-\alpha_{12}N_2}{K_1})$$
 $$0=r_1N_1(\frac{K_1-N_1-\alpha_{12}N_2}{K_1})$$
 
 $$0=\frac{K_1-N_1-\alpha_{12}N_2}{K_1}$$
-
-$$0=K_1-N_1-\alpha_{12}N_2$$
 
 $$N_1=K_1-\alpha_{12}N_2$$
 
@@ -604,7 +809,9 @@ Linear equation! We can use N1 and N2 as coordinates to graph each species ZNGI.
 
 ## L-V competition model
 
-```{r}
+```{r echo=TRUE} 
+#| fig-align: "center"
+
 N <- 0:20
 
 # Species 1 wins
@@ -617,11 +824,14 @@ d1 <- data.frame(N = N) %>%
   mutate(N2_iso = K_2 - a_21*N,
          N1_iso = K_1 - a_12*N,
          scenario = "Species 1 wins")
-  
+```
 
+## L-V competition model
+
+```{r}
 p1 <- ggplot(data = d1) +
-  geom_line(aes(x = N, y = N2_iso, color = "N2_iso")) +
-  geom_line(aes(x = N, y = N1_iso, color = "N1_iso")) +
+  geom_line(aes(x = N, y = N2_iso, color = "N2_iso"), size = 1.2) +
+  geom_line(aes(x = N, y = N1_iso, color = "N1_iso"), size = 1.2) +
   coord_cartesian(ylim = c(0, 1.5), xlim = c(0, 1.5), expand = 0) +
   labs(y = "Species 2", x = "Species 1") +
   NULL
@@ -638,8 +848,8 @@ d2 <- data.frame(N = N) %>%
          scenario = "Species 2 wins")
 
 p2 <- ggplot(data = d2) +
-  geom_line(aes(x = N, y = N2_iso, color = "N2_iso")) +
-  geom_line(aes(x = N, y = N1_iso, color = "N1_iso")) +
+  geom_line(aes(x = N, y = N2_iso, color = "N2_iso"), size = 1.2) +
+  geom_line(aes(x = N, y = N1_iso, color = "N1_iso"), size = 1.2) +
   coord_cartesian(ylim = c(0, 1.5), xlim = c(0, 1.5), expand = 0) +
   labs(y = "Species 2", x = "Species 1") +
   NULL
@@ -656,8 +866,8 @@ d3 <- data.frame(N = N) %>%
          scenario = "Unstable equilibrium")
 
 p3 <- ggplot(data = d3) +
-  geom_line(aes(x = N, y = N2_iso, color = "N2_iso")) +
-  geom_line(aes(x = N, y = N1_iso, color = "N1_iso")) +
+  geom_line(aes(x = N, y = N2_iso, color = "N2_iso"), size = 1.2) +
+  geom_line(aes(x = N, y = N1_iso, color = "N1_iso"), size = 1.2) +
   coord_cartesian(ylim = c(0, 1.5), xlim = c(0, 1.5), expand = 0) +
   labs(y = "Species 2", x = "Species 1") +
   NULL
@@ -674,8 +884,8 @@ d4 <- data.frame(N = N) %>%
          scenario = "Stable equilibrium")
 
 p4 <- ggplot(data = d) +
-  geom_line(aes(x = N, y = N2_iso, color = "N2_iso")) +
-  geom_line(aes(x = N, y = N1_iso, color = "N1_iso")) +
+  geom_line(aes(x = N, y = N2_iso, color = "N2_iso"), size = 1.2) +
+  geom_line(aes(x = N, y = N1_iso, color = "N1_iso"), size = 1.2) +
   coord_cartesian(ylim = c(0, 1.5), xlim = c(0, 1.5), expand = 0) +
   labs(y = "Species 2", x = "Species 1") +
   NULL
@@ -685,58 +895,231 @@ p4 <- ggplot(data = d) +
 d <- bind_rows(d1, d2, d3, d4)
 
 ggplot(data = d) + 
-  geom_line(aes(x = N, y = N2_iso, color = "2 isocline")) +
-  geom_line(aes(x = N, y = N1_iso, color = "1 isocline")) +
+  geom_line(aes(x = N, y = N2_iso, color = "2 isocline"), size = 1.2) +
+  geom_line(aes(x = N, y = N1_iso, color = "1 isocline"), size = 1.2) +
   coord_cartesian(ylim = c(0, 1.5), xlim = c(0, 1.5), expand = 0) +
   labs(y = "Species 2", x = "Species 1", color = "Species") +
   facet_wrap(~scenario, ncol = 2, scales = "free") + 
+  scale_color_brewer(palette = "Set2") +
   theme(aspect.ratio = 4/5,
         strip.background = element_rect(fill = "gray95"),
         strip.text = element_text(margin = margin(b = 2, t = 2), color = "grey10"))
 ```
 
-:::{.notes}
+::: {.notes}
 Simply put, for species to coexist stably, their effects on themselves must be greater than their effects on each other
 :::
 
+## Epilogue
+
+* If models keep being still are too unrealistic even after adding realistic features, why do we use them?
+
+::: {.notes}
+Also, what do we not include here? Stochasticity, environmental dependence
+Interactions vary with space and time and environment and size...
+:::
+
+![](images/g_box.png){fig-align="center"}
+
+::: {.notes}
+Also, what do we not include here? Stochasticity, environmental dependence
+Interactions vary with space and time and environment and size...
+:::
+
+# 3. Quantifying species interactions in natural systems
+
 ## 3. Quantifying species interactions in natural systems
 
-* Diet data
+* We know how some ideas on how to model interactions mathematically
 
-* Abundance data (e.g., from scientific trawl surveys)
+* How do we determine if and what species interactions occur in the wild?
 
-* Apply statistical models
+::: {.notes}
+Diet data, trait-data, Abundance data (e.g., from scientific trawl surveys), Apply statistical models
+:::
 
----
 
-* Carrol paper?
+## Diet data
 
-* Neuenfeldt paper?
+* We collect stomach content data for key species (read: commercial)
 
-* Casini trophic cascade paper?
+![](images/diet.png){fig-align="center"}
 
+
+## Diet data: example Baltic cod
+
+
+## Diet data: example Baltic cod
+
+* Bioenergetic models + diet information = cod grow worse today
+
+![](images/eq1.png){fig-align="center" width=55%}
+
+![](images/eq2.png){fig-align="center" width=60%}
+
+![](images/eq3.png){fig-align="center" width=50%}
+
+
+::: footer
+Neuenfeldt *et al* (2020) ICESJMS
+:::
+
+
+## Diet data: example Baltic cod
+
+* Bioenergetic models + diet information = cod grow worse today
+
+![](images/neuen.png){fig-align="center"}
+
+::: footer
+Neuenfeldt *et al* (2020) ICESJMS
+:::
+
+## Diet data: example Baltic cod
+
+![](images/skinny_cod.png){fig-align="center"}
+
+::: footer
+Lunneryd 2020, Aqua Reports
+:::
+
+## Predation in space! 
+
+* Diets, predators, and prey vary in space
+
+![](images/goodman1.png){fig-align="center"}
+
+::: footer
+Goodman *et al* (2022) Ecography 
+:::
+
+::: {.notes}
+This paper also uses biomass data...
+:::
+
+
+## Predation in space! 
+
+* Diets, predators, and prey vary in space
+
+![](images/goodman2.png){fig-align="center"}
+
+::: footer
+Goodman *et al* (2022) Ecography 
+:::
+
+
+## Predation in space! 
+
+* Diets, predators, and prey vary in space
+
+![](images/goodman3.png){fig-align="center"}
+
+::: footer
+Goodman *et al* (2022) Ecography 
+:::
+
+## Competition
+
+* Sprat and herring affect the abundance of zooplankton
+
+* In sprat, zooplankton in stomachs correlated with condition
+
+![](images/casini_sprat.png){fig-align="center"}
+
+::: footer
+Casini *et al* (2006) Oikos 
+:::
+
+::: {.notes}
+Here we use in addition some other metric: condition! require other samples
+
+Also, we haven't touched on experiments
+:::
 
 # 4. Species interactions in fisheries research
-* Statistical / Mathematical approaches
+
+## 4. Species interactions in fisheries research
+* Statistical or Mathematical approaches
 
 
 ## In stock assessment
-* Natural mortality
 
-* SMS model
+* Mainly in terms of predation (natural mortality), not on growth parameters (competition!
 
-## Food web models for strategic advice
+* SMS model: catch-at-age, survey abundance, stomach data
 
-* Based on "first principles"
+* (statistical approach)
 
-* Ken Andersen
-
-* mizer graphical abstract
-
-```{r, echo=FALSE, out.width = '75%'}
-knitr::include_graphics("images/big_fish.png")
-```
+::: footer
+Lewy & Vinther (2004) ICES CM
+:::
 
 
-- CHECK SLIDES
-- CHECK NOTES FROM VALE MEETING
+## Natural mortality rates
+
+![](images/sms.png){fig-align="center"}
+
+::: footer
+Lewy & Vinther (2004) ICES CM
+:::
+
+## Food web models: strategic advice
+
+* Size-spectrum models
+
+![](images/blanch3.png){fig-align="center"}
+
+::: footer
+Blanchard et al (2017) TREE
+:::
+
+::: {.notes}
+Read the boxes
+:::
+
+## Food web models: strategic advice
+
+![](images/concept_figure.png){fig-align="center"}
+
+::: footer
+Lindmark et al (2022) GCB; Scott et al (2014) Methods in Ecology & Evolution; Andersen (2019) Princeton University Press
+:::
+
+::: {.notes}
+strategic vs tactical, Based on "first principles", higher independence
+:::
+
+## Food web models: strategic advice
+
+![](images/blanch1.png){fig-align="center"}
+
+::: footer
+Blanchard et al (2014) Journal of Applied Ecology
+:::
+
+::: {.notes}
+strategic vs tactical
+:::
+
+## Food web models: strategic advice
+
+![](images/blanch2.png){fig-align="center"}
+
+::: footer
+Blanchard et al (2014) Journal of Applied Ecology
+:::
+
+::: {.notes}
+strategic vs tactical
+:::
+
+## Mathematical or statistical?
+
+![](images/whynotboth.png){fig-align="center"}
+::: {.notes}
+Many of these models are based upon statistical techniques and are good at assessing the current state and making short-term predictions; however, as they do not model interactions between stocks, they lack predictive power on longer timescales. Additionally, there are size-based multi-species models that represent key biological processes and consider interactions between stocks such as predation and competition for resources. Due to the complexity of these models, they are difficult to fit to data, and so many size-based multi-species models depend upon single-species models where they exist, or ad hoc assumptions when they do not, for parameters such as annual fishing mortality.
+:::
+
+
+## Question time!

@@ -1,0 +1,1983 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, sharp corners, frame hidden, boxrule=0pt, interior hidden, breakable, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\hypertarget{ecological-interactions-dynamics}{%
+\section{Ecological Interactions \&
+Dynamics}\label{ecological-interactions-dynamics}}
+
+Principles in Fisheries Science
+
+Max Lindmark
+
+November 3, 2022
+
+Swedish University of Agricultural Sciences
+
+\hypertarget{who-am-i}{%
+\subsection{Who am I?}\label{who-am-i}}
+
+\begin{itemize}
+\item
+  MSc in Applied Marine and Fisheries Ecology, Aberdeen UK
+\item
+  PhD in Marine Ecology, theoretical population and community ecology
+\item
+  Postdoc at SLU on spatiotemporal aspects of cod-flounder interactions
+\item
+  \href{mailto:max.lindmark@slu.se}{\nolinkurl{max.lindmark@slu.se}}
+\end{itemize}
+
+\hypertarget{who-are-you}{%
+\subsection{Who are you \ldots{} ?}\label{who-are-you}}
+
+\hypertarget{plan-for-today}{%
+\subsection{Plan for today}\label{plan-for-today}}
+
+\begin{itemize}
+\item
+  Theoretical
+
+  \begin{itemize}
+  \item
+    1: Brief recap on population ecology
+  \item
+    2: Species interactions!
+  \end{itemize}
+\item
+  ``Empirical''
+
+  \begin{itemize}
+  \item
+    3: Quantifying species interactions in natural systems
+  \item
+    4: Species interactions in fisheries ecology
+  \end{itemize}
+\end{itemize}
+
+theoretical = mathematical
+
+\hypertarget{plan-for-today-1}{%
+\subsection{Plan for today}\label{plan-for-today-1}}
+
+\begin{itemize}
+\item
+  Have questions?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Just interrupt and ask, write in chat or ask during our break.
+    Thanks!
+  \end{itemize}
+\item
+  Slides can be found here: \url{https://github.com/maxlindmark/pfs}
+\item
+  And on Canvas
+\end{itemize}
+
+\hypertarget{motivating-questions}{%
+\subsection{Motivating questions}\label{motivating-questions}}
+
+\begin{itemize}
+\item
+  We want to know what makes fish abundance vary through time and
+  space\ldots{}
+
+  \begin{itemize}
+  \item
+    For conservation
+  \item
+    For sustainable management of marine resources
+  \item
+    Because it is a basic scientific question (ecology is a young
+    discipline!)
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{brief-recap-on-population-ecology}{%
+\section{1. Brief recap on population
+ecology}\label{brief-recap-on-population-ecology}}
+
+\hypertarget{recap}{%
+\subsection{Recap}\label{recap}}
+
+\begin{itemize}
+\item
+  \textbf{Population ecology}: how and why animal populations change in
+  numbers over time and space
+\item
+  \textbf{Community ecology}: how and why species abundance,
+  composition, diversity and structure change over time and space
+\item
+  \textbf{Food web ecology}: energy transfers (feeding links) between
+  species in food webs
+\end{itemize}
+
+\hypertarget{population-ecology}{%
+\subsection{Population ecology}\label{population-ecology}}
+
+The branch of science that attempts to describe, understand, and predict
+the growth (positive and negative) of animal and plant populations
+
+\hypertarget{why-do-we-use-models}{%
+\subsection{Why do we use models?}\label{why-do-we-use-models}}
+
+\begin{itemize}
+\item
+  Capture the essence of a process so that we can generalize across
+  systems
+\item
+  Simplest representation of a population:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{y =} \DecValTok{1}\NormalTok{, }\AttributeTok{x =} \DecValTok{1}\NormalTok{, }\AttributeTok{family =} \StringTok{"mono"}\NormalTok{)}
+
+\FunctionTok{ggplot}\NormalTok{(d, }\FunctionTok{aes}\NormalTok{(x, y)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{shape =} \DecValTok{21}\NormalTok{, }\AttributeTok{size =} \DecValTok{40}\NormalTok{, }\AttributeTok{stroke =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_void}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{ecological_interactions_files/figure-pdf/unnamed-chunk-1-1.pdf}
+
+}
+
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  What do we assume in this model?
+\end{itemize}
+
+\hypertarget{the-simplest-population-model}{%
+\subsection{The simplest population
+model}\label{the-simplest-population-model}}
+
+Population size (numbers) at time \(t\): \[N(t)\]
+
+Rate of change: \[\frac{dN}{dt}\]
+
+Per capita rate of change: \[\frac{1}{N}\frac{dN}{dt}\]
+
+\hypertarget{the-simplest-population-model-1}{%
+\subsection{The simplest population
+model}\label{the-simplest-population-model-1}}
+
+\[r = b - d\]
+
+\[\frac{dN}{dt}=rN\]
+
+\hypertarget{the-simplest-population-model-2}{%
+\subsection{The simplest population
+model}\label{the-simplest-population-model-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  Solution to this first-order differential equation:
+\end{itemize}
+
+\[N(t)=N_0e^{rt}\]
+
+\begin{itemize}
+\tightlist
+\item
+  Exponential growth for positive \(r\) and exponential decline for
+  negative \(r\)
+\end{itemize}
+
+\hypertarget{the-simplest-population-model-3}{%
+\subsection{The simplest population
+model}\label{the-simplest-population-model-3}}
+
+\[N(t)=N_0e^{rt}\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{50}
+\NormalTok{r }\OtherTok{\textless{}{-}} \FloatTok{0.1}
+\NormalTok{d }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{N =}\NormalTok{ n) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{dNdt =}\NormalTok{ r}\SpecialCharTok{*}\NormalTok{N,}
+         \AttributeTok{pc\_dNdt =}\NormalTok{ (r}\SpecialCharTok{*}\NormalTok{N)}\SpecialCharTok{/}\NormalTok{N)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{the-simplest-population-model-4}{%
+\subsection{The simplest population
+model}\label{the-simplest-population-model-4}}
+
+\begin{figure}
+
+{\centering \includegraphics{ecological_interactions_files/figure-pdf/unnamed-chunk-3-1.pdf}
+
+}
+
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Per-capita growth rates unaffected by density
+\item
+  Population growth rates increase with size!
+\end{itemize}
+
+\hypertarget{the-simplest-population-model-5}{%
+\subsection{The simplest population
+model}\label{the-simplest-population-model-5}}
+
+\begin{itemize}
+\tightlist
+\item
+  Equilibrium?
+\end{itemize}
+
+\[\frac{dN}{dt}=rN\]
+
+\hypertarget{the-simplest-population-model-6}{%
+\subsection{The simplest population
+model}\label{the-simplest-population-model-6}}
+
+\begin{itemize}
+\tightlist
+\item
+  What's wrong with this model?
+\end{itemize}
+
+\[\frac{dN}{dt}=rN\]
+
+\hypertarget{population-regulation}{%
+\subsection{Population regulation}\label{population-regulation}}
+
+\begin{itemize}
+\item
+  Density or density-independent factors?
+\item
+  Strongly debated in the 1950's
+\item
+  Any ideas for the simplest form of density dependence?
+\end{itemize}
+
+\hypertarget{population-regulation-1}{%
+\subsection{Population regulation}\label{population-regulation-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p1 }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{aspect.ratio =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{ecological_interactions_files/figure-pdf/unnamed-chunk-4-1.pdf}
+
+}
+
+\end{figure}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{the-logistic-growth-model}{%
+\subsection{The logistic growth model}\label{the-logistic-growth-model}}
+
+\textbf{John Graunt (1662)}
+
+\begin{itemize}
+\item
+  Studied lists of births and deaths (demography) in London
+\item
+  Adam and Eve: 6000 years ago\ldots{} doubling time is 64 years\ldots{}
+\item
+  Should be \emph{far} more people now than there is
+\end{itemize}
+
+\begin{figure}
+
+\hfill{} \includegraphics[width=\textwidth,height=2.60417in]{images/JohnGraunt.png}
+
+\end{figure}
+
+\hypertarget{the-logistic-growth-model-1}{%
+\subsection{The logistic growth
+model}\label{the-logistic-growth-model-1}}
+
+\textbf{Sir William Petty (1683)}
+
+\begin{itemize}
+\item
+  Fool, you haven't accounted for the biblical flood!
+\item
+  Reduce doubling time, change start time
+\end{itemize}
+
+\begin{figure}
+
+\hfill{} \includegraphics{images/sir_will.png}
+
+\end{figure}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{figure}
+
+{\centering \includegraphics{images/close_will.png}
+
+}
+
+\end{figure}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{figure}
+
+{\centering \includegraphics{images/closest_will.png}
+
+}
+
+\end{figure}
+
+\hypertarget{the-logistic-growth-model-2}{%
+\subsection{The logistic growth
+model}\label{the-logistic-growth-model-2}}
+
+\textbf{Reverend Thomas Robert Malthus (1798)}
+
+\begin{itemize}
+\item
+  \emph{An Essay on the Principle of Populations}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If population grows faster than supply\ldots{}
+  \item
+    \ldots{} much human misery!
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}
+
+\hfill{} \includegraphics{images/TomasMaltus.png}
+
+\end{figure}
+
+\hypertarget{the-logistic-growth-model-3}{%
+\subsection{The logistic growth
+model}\label{the-logistic-growth-model-3}}
+
+\textbf{Pierre-Francois Verhulst (1845)}
+
+\begin{itemize}
+\tightlist
+\item
+  Derived the logistic equation
+\end{itemize}
+
+\textbf{Raymond Pearl} and \textbf{Lowell Reed (1920)}
+
+\begin{itemize}
+\tightlist
+\item
+  Re-discovered it: Law of nature?
+\end{itemize}
+
+\begin{figure}
+
+\hfill{} \includegraphics[width=\textwidth,height=2.60417in]{images/verhulst.png}
+
+\end{figure}
+
+\hypertarget{the-logistic-growth-model-4}{%
+\subsection{The logistic growth
+model}\label{the-logistic-growth-model-4}}
+
+\[\frac{dN}{dt}=rN(1-\frac{N}{K})\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{0}\SpecialCharTok{:}\DecValTok{50}
+\NormalTok{K }\OtherTok{\textless{}{-}} \DecValTok{40}
+
+\NormalTok{d }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{N =}\NormalTok{ n) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{dNdt =}\NormalTok{ r}\SpecialCharTok{*}\NormalTok{N}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ N}\SpecialCharTok{/}\NormalTok{K),}
+         \AttributeTok{pc\_dNdt =}\NormalTok{ dNdt}\SpecialCharTok{/}\NormalTok{N)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{the-logistic-growth-model-5}{%
+\subsection{The logistic growth
+model}\label{the-logistic-growth-model-5}}
+
+\begin{verbatim}
+Warning: Removed 1 row(s) containing missing values (geom_path).
+\end{verbatim}
+
+\begin{figure}
+
+{\centering \includegraphics{ecological_interactions_files/figure-pdf/unnamed-chunk-6-1.pdf}
+
+}
+
+\end{figure}
+
+\hypertarget{the-logistic-growth-model-6}{%
+\subsection{The logistic growth
+model}\label{the-logistic-growth-model-6}}
+
+\[\frac{dN}{dt}=rN(1-\frac{N}{K})\]
+
+\begin{itemize}
+\item
+  How does the population grow?
+\item
+  Can solve this\ldots{} but also iteratively fill in \(N\)s'
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{r }\OtherTok{\textless{}{-}} \FloatTok{0.1}\NormalTok{; K }\OtherTok{\textless{}{-}} \DecValTok{40}\NormalTok{; N\_ini }\OtherTok{\textless{}{-}} \DecValTok{2}\NormalTok{; t }\OtherTok{\textless{}{-}} \DecValTok{100}
+\NormalTok{N }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\ConstantTok{NA}\NormalTok{, t)}
+\NormalTok{N[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ N\_ini}
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{2}\SpecialCharTok{:}\NormalTok{t) \{}
+\NormalTok{N[i] }\OtherTok{\textless{}{-}}\NormalTok{ r }\SpecialCharTok{*}\NormalTok{ N[i}\DecValTok{{-}1}\NormalTok{] }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{(N[i }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{]}\SpecialCharTok{/}\NormalTok{K)) }\SpecialCharTok{+}\NormalTok{ N[i}\DecValTok{{-}1}\NormalTok{]}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{the-logistic-growth-model-7}{%
+\subsection{The logistic growth
+model}\label{the-logistic-growth-model-7}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{N =}\NormalTok{ N, }\AttributeTok{t =} \DecValTok{1}\SpecialCharTok{:}\NormalTok{t)}
+
+\FunctionTok{ggplot}\NormalTok{(d, }\FunctionTok{aes}\NormalTok{(t, N)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Logistic growth curve"}\NormalTok{, }\AttributeTok{subtitle =} \StringTok{"r = 0.1 and K = 40"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{ecological_interactions_files/figure-pdf/unnamed-chunk-8-1.pdf}
+
+}
+
+\end{figure}
+
+\hypertarget{the-logistic-growth-model-8}{%
+\subsection{The logistic growth
+model}\label{the-logistic-growth-model-8}}
+
+\[\frac{dN}{dt}=rN(1-\frac{N}{K})\]
+
+\begin{itemize}
+\item
+  Another useful technique is to find the equilibria with algebra
+\item
+  Set \(\frac{dN}{dt}=0\)
+\end{itemize}
+
+remind them of equilibria
+
+\hypertarget{the-logistic-growth-model-9}{%
+\subsection{The logistic growth
+model}\label{the-logistic-growth-model-9}}
+
+\[\frac{dN}{dt}=rN(1-\frac{N}{K})\]
+
+\begin{itemize}
+\item
+  Another useful technique is to find the equilibria with algebra
+\item
+  set \(\frac{dN}{dt}=0\)
+\item
+  \(N_1^*=0\)
+\item
+  \(N_2^*=K\)
+\end{itemize}
+
+\hypertarget{the-logistic-growth-model-10}{%
+\subsection{The logistic growth
+model}\label{the-logistic-growth-model-10}}
+
+\[\frac{dN}{dt}=rN(1-\frac{N}{K})\]
+
+\begin{itemize}
+\tightlist
+\item
+  One can also conduct stability analysis, but we will skip that
+\end{itemize}
+
+\hypertarget{the-logistic-growth-model-11}{%
+\subsection{The logistic growth
+model}\label{the-logistic-growth-model-11}}
+
+\begin{itemize}
+\tightlist
+\item
+  Is it really a law of nature?
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p1 }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{aspect.ratio =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning: Removed 1 row(s) containing missing values (geom_path).
+\end{verbatim}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{ecological_interactions_files/figure-pdf/unnamed-chunk-9-1.pdf}
+
+}
+
+\end{figure}
+
+There are many other forms of dd\ldots{}
+
+\hypertarget{the-logistic-growth-model-12}{%
+\subsection{The logistic growth
+model}\label{the-logistic-growth-model-12}}
+
+\begin{itemize}
+\tightlist
+\item
+  \ldots{} There are other models where growth depends on population
+  size, e.g., Gompertz, and it may of course have different shape the
+  linear!
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p1 }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{aspect.ratio =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning: Removed 1 row(s) containing missing values (geom_path).
+\end{verbatim}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{ecological_interactions_files/figure-pdf/unnamed-chunk-10-1.pdf}
+
+}
+
+\end{figure}
+
+\hypertarget{species-interactions}{%
+\section{2. Species interactions}\label{species-interactions}}
+
+\hypertarget{species-interactions-1}{%
+\subsection{2. Species interactions}\label{species-interactions-1}}
+
+\begin{itemize}
+\item
+  \textbf{Predation{]}}{[}parasitism{]} (-, +)
+\item
+  \textbf{Competition} (-, -)
+\item
+  Mutualism (+, +)
+\item
+  Amensialism (0, -)
+\item
+  Commensalism (0, +)
+\end{itemize}
+
+always individuals interacting! Inter or intraspecific?
+
+\hypertarget{predation}{%
+\subsection{Predation}\label{predation}}
+
+\begin{figure}
+
+{\centering \includegraphics{images/big_fish.png}
+
+}
+
+\end{figure}
+
+Staying in the theoretical lane a bit longer, we'll look at species
+interactions with a set of \textbf{coupled} ODE's
+
+\hypertarget{the-original-predator-prey-model}{%
+\subsection{The original predator-prey
+model}\label{the-original-predator-prey-model}}
+
+\begin{itemize}
+\item
+  Lotka-Volterra
+\item
+  Published independently by Alfred J. Lotka and Vito Volterra in 1925
+  \& 1926
+\item
+  Widely used and analyzed today
+\end{itemize}
+
+\hypertarget{the-original-predator-prey-model-1}{%
+\subsection{The original predator-prey
+model}\label{the-original-predator-prey-model-1}}
+
+\begin{figure}
+
+\begin{minipage}[t]{0.33\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{images/lotka.png}
+
+}
+
+\caption{Alfred J. Lotka}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.33\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{images/vito.png}
+
+}
+
+\caption{Vito Volterra}
+
+}
+
+\end{minipage}%
+
+\end{figure}
+
+\hypertarget{the-original-predator-prey-model-2}{%
+\subsection{The original predator-prey
+model}\label{the-original-predator-prey-model-2}}
+
+\begin{figure}
+
+\begin{minipage}[t]{0.33\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{images/lotka.png}
+
+}
+
+\caption{Alfred J. Lotka}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.33\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{images/vito.png}
+
+}
+
+\caption{Vito Volterra}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.33\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{images/umberto.png}
+
+}
+
+\caption{Umberto D'Ancona}
+
+}
+
+\end{minipage}%
+\newline
+\begin{minipage}[t]{0.33\linewidth}
+
+{\centering 
+
+Volterra's enquiry was inspired through his interactions with the marine
+biologist Umberto D'Ancona, who was courting his daughter Luisa Volterra
+at the time and later was to become his son-in-law. D'Ancona studied the
+fish catches in the Adriatic Sea and had noticed that the percentage of
+Selachians caught had increased during the years of World War I
+(1914â``18), and the relative abundance of prey followed the opposite
+pattern. This puzzled him, as the fishing effort had been very much
+reduced during the war years.
+
+}
+
+\end{minipage}%
+
+\end{figure}
+
+\hypertarget{the-original-predator-prey-model-3}{%
+\subsection{The original predator-prey
+model}\label{the-original-predator-prey-model-3}}
+
+\begin{figure}
+
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{images/fish_market.png}
+
+}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{images/fish_market2.png}
+
+}
+
+}
+
+\end{minipage}%
+
+\end{figure}
+
+\hypertarget{the-original-predator-prey-model-4}{%
+\subsection{The original predator-prey
+model}\label{the-original-predator-prey-model-4}}
+
+\begin{itemize}
+\tightlist
+\item
+  Volterra wrote down these eqns to Umberto's:
+\end{itemize}
+
+\[\frac{dN}{dt}=\alpha N - \beta NP\]
+\[\frac{dP}{dt}=\delta \beta NP-\gamma P\]
+
+\begin{itemize}
+\tightlist
+\item
+  How does the prey grow in absence of predators? How does the predator
+  population decline in the absence of prey? What is \(\beta\) and
+  \(\delta\)?
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  exponentially (set P = 0 and it becomes the first growth model we
+  looked at)
+\item
+  Also exponentially
+\item
+  Predation/attack rate and conversion efficiency
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The cost to the victim is always greater than the benefit to the
+  enemy.
+\end{itemize}
+
+\hypertarget{lotka-volterra-model}{%
+\subsection{Lotka-Volterra model}\label{lotka-volterra-model}}
+
+\begin{itemize}
+\tightlist
+\item
+  Let's break it down
+\end{itemize}
+
+\[\frac{dN}{dt}=\alpha N - \beta NP\]
+
+\[\frac{dP}{dt}=\delta \beta NP-\gamma P\]
+
+\hypertarget{lotka-volterra-model-1}{%
+\subsection{Lotka-Volterra model}\label{lotka-volterra-model-1}}
+
+\begin{itemize}
+\item
+  Zero-net growth isoclines
+\item
+  set \(\frac{dN}{dt}\) or \(\frac{dP}{dt}\) = 0, break out \(P\) and
+  \(N\)
+\end{itemize}
+
+\[\frac{dN}{dt}=\alpha N - \beta NP\]
+
+\[\frac{dP}{dt}=\delta \beta NP-\gamma P\]
+
+How do we find the isoclines? what do they mean here
+
+\hypertarget{prey-zero-growth-isoclines}{%
+\subsection{Prey zero growth
+isoclines}\label{prey-zero-growth-isoclines}}
+
+\[\frac{dN}{dt}=\alpha N - \beta NP\]
+
+\[0=\alpha N - \beta NP\] \[0=\alpha - \beta P\]
+\[P=\frac{\alpha}  {\beta} \]
+
+\hypertarget{predator-zero-growth-isoclines}{%
+\subsection{Predator zero growth
+isoclines}\label{predator-zero-growth-isoclines}}
+
+\[\frac{dP}{dt}=\delta \beta NP-\gamma P\]
+
+\[0=\delta \beta NP-\gamma P\] \[0=\delta \beta N-\gamma\]
+
+\[P=\frac{\gamma}  {\delta\beta} \]
+
+This shows us that the prey increase whenever the predator abundance is
+below a certain value. We found that value above, and it is P=r/a. When
+does the predator increase or decrease? When the prey is above or below
+a particular value, N=m/(ea). The only time these populations are at
+rest is when both of these are true.
+
+\hypertarget{lotka-volterra-model-2}{%
+\subsection{Lotka-Volterra model}\label{lotka-volterra-model-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# https://strimas.com/post/lotka{-}volterra/}
+\CommentTok{\# parameters}
+\NormalTok{pars }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\AttributeTok{alpha =} \DecValTok{1}\NormalTok{, }\AttributeTok{beta =} \FloatTok{0.2}\NormalTok{, }\AttributeTok{delta =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{gamma =} \FloatTok{0.2}\NormalTok{)}
+\CommentTok{\# initial state }
+\NormalTok{init }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\AttributeTok{x =} \DecValTok{1}\NormalTok{, }\AttributeTok{y =} \DecValTok{2}\NormalTok{)}
+\CommentTok{\# times}
+\NormalTok{times }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{100}\NormalTok{, }\AttributeTok{by =} \DecValTok{1}\NormalTok{)}
+
+\NormalTok{deriv }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(t, state, pars) \{}
+  \FunctionTok{with}\NormalTok{(}\FunctionTok{as.list}\NormalTok{(}\FunctionTok{c}\NormalTok{(state, pars)), \{}
+\NormalTok{    d\_x }\OtherTok{\textless{}{-}}\NormalTok{ alpha }\SpecialCharTok{*}\NormalTok{ x }\SpecialCharTok{{-}}\NormalTok{ beta }\SpecialCharTok{*}\NormalTok{ x }\SpecialCharTok{*}\NormalTok{ y}
+\NormalTok{    d\_y }\OtherTok{\textless{}{-}}\NormalTok{ delta }\SpecialCharTok{*}\NormalTok{ beta }\SpecialCharTok{*}\NormalTok{ x }\SpecialCharTok{*}\NormalTok{ y }\SpecialCharTok{{-}}\NormalTok{ gamma }\SpecialCharTok{*}\NormalTok{ y}
+    \FunctionTok{return}\NormalTok{(}\FunctionTok{list}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\AttributeTok{x =}\NormalTok{ d\_x, }\AttributeTok{y =}\NormalTok{ d\_y)))}
+\NormalTok{  \})}
+\NormalTok{\}}
+
+\NormalTok{lv\_results }\OtherTok{\textless{}{-}} \FunctionTok{ode}\NormalTok{(init, times, deriv, pars)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{lotka-volterra-model-3}{%
+\subsection{Lotka-Volterra model}\label{lotka-volterra-model-3}}
+
+\begin{itemize}
+\tightlist
+\item
+  A cyclic model
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lv\_results }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{data.frame}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{gather}\NormalTok{(var, pop, }\SpecialCharTok{{-}}\NormalTok{time) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{var =} \FunctionTok{if\_else}\NormalTok{(var }\SpecialCharTok{==} \StringTok{"x"}\NormalTok{, }\StringTok{"Prey"}\NormalTok{, }\StringTok{"Predator"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ time, }\AttributeTok{y =}\NormalTok{ pop, }\AttributeTok{color =}\NormalTok{ var)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Set2"}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{subtitle =} \FunctionTok{paste}\NormalTok{(}\FunctionTok{names}\NormalTok{(pars), pars, }\AttributeTok{sep =} \StringTok{" = "}\NormalTok{, }\AttributeTok{collapse =} \StringTok{"; "}\NormalTok{),}
+         \AttributeTok{x =} \StringTok{"Time"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Population density"}\NormalTok{) }\SpecialCharTok{+} 
+    \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"bottom"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{ecological_interactions_files/figure-pdf/unnamed-chunk-12-1.pdf}
+
+}
+
+\end{figure}
+
+Prey increase until predators are sufficiently abundant to control them,
+at which point they decline, leading to the decline of preadtors. The
+predator peaks lag behind the prey peaks
+
+\hypertarget{lotka-volterra-model-4}{%
+\subsection{Lotka-Volterra model}\label{lotka-volterra-model-4}}
+
+\begin{itemize}
+\tightlist
+\item
+  A cyclic model: phase plot
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lv\_results }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{data.frame}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{rename}\NormalTok{(}\AttributeTok{prey =}\NormalTok{ x, }\AttributeTok{predator =}\NormalTok{ y) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ prey, }\AttributeTok{y =}\NormalTok{ predator, }\AttributeTok{color =}\NormalTok{ time)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{subtitle =} \FunctionTok{paste}\NormalTok{(}\FunctionTok{names}\NormalTok{(pars), pars, }\AttributeTok{sep =} \StringTok{" = "}\NormalTok{, }\AttributeTok{collapse =} \StringTok{"; "}\NormalTok{),}
+         \AttributeTok{x =} \StringTok{"Prey"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Predator"}\NormalTok{) }\SpecialCharTok{+} 
+    \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"bottom"}\NormalTok{,}
+          \AttributeTok{aspect.ratio =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{ecological_interactions_files/figure-pdf/unnamed-chunk-13-1.pdf}
+
+}
+
+\end{figure}
+
+\hypertarget{a-famous-example}{%
+\subsection{A famous example}\label{a-famous-example}}
+
+\begin{itemize}
+\tightlist
+\item
+  Lynx and hare data compiled by Elton\footnote{Elton 1927}
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{images/lynx_hare.png}
+
+}
+
+\end{figure}
+
+Changes in the abundance of Lynx (Lynx canadensis) {[}top{]} and various
+prey species such as Snowshoe Hare (Lepus americanus) are documented in
+records of the numbers of pelts brought into the Hudson Bay Company.
+Note that the Lynx cycle peaks slightly later than the hare cycle. This
+suggests a hypothesis that an abundance of hares feeds an increase in
+the number of lynx, which in turn depresses the number of hare and so
+on. {[}Unfortunately, hares also cycle in the absence of lynx{]}. The
+original data set was compiled by Charles Elton, and is notable as one
+of the longest time series in ecology.
+
+\hypertarget{other-predator-prey-models}{%
+\subsection{Other predator-prey
+models}\label{other-predator-prey-models}}
+
+\begin{itemize}
+\tightlist
+\item
+  How can we incorporate more realism into the Lotka-Volterra model?
+\end{itemize}
+
+predator functional response, prey growth rate (numerical response),
+predation depending on no. predators?
+
+\hypertarget{functional-respose}{%
+\subsection{Functional respose}\label{functional-respose}}
+
+\begin{itemize}
+\tightlist
+\item
+  ``Kill rate'', in the LV model given by:
+\end{itemize}
+
+\[\beta N\]
+
+\begin{itemize}
+\tightlist
+\item
+  We call this a Type I functional response
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{0}\SpecialCharTok{:}\DecValTok{50}
+\NormalTok{beta }\OtherTok{\textless{}{-}} \FloatTok{0.2}
+\NormalTok{delta }\OtherTok{\textless{}{-}} \FloatTok{0.5}
+
+\NormalTok{d }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{N =}\NormalTok{ n) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{predation =}\NormalTok{ beta}\SpecialCharTok{*}\NormalTok{delta}\SpecialCharTok{*}\NormalTok{N)}
+
+\FunctionTok{ggplot}\NormalTok{(d, }\FunctionTok{aes}\NormalTok{(N, predation)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"Predation rate"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Prey population size (N)"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{expand =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{aspect.ratio =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{ecological_interactions_files/figure-pdf/unnamed-chunk-14-1.pdf}
+
+}
+
+\end{figure}
+
+\hypertarget{other-functional-responses}{%
+\subsection{Other functional
+responses!}\label{other-functional-responses}}
+
+\begin{itemize}
+\item
+  Type I: \(\alpha N\)
+\item
+  Type II: \(\frac {\alpha N}{1+\alpha h N}\)
+\item
+  Type III: \(\frac {\alpha N^c}{1+\alpha h N^c}\)
+\end{itemize}
+
+\hypertarget{other-functional-responses-1}{%
+\subsection{Other functional
+responses!}\label{other-functional-responses-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{, }\FloatTok{0.1}\NormalTok{); a }\OtherTok{\textless{}{-}} \FloatTok{0.5}\NormalTok{; b }\OtherTok{\textless{}{-}} \DecValTok{1}\NormalTok{; c }\OtherTok{\textless{}{-}} \DecValTok{3}
+
+\NormalTok{d }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{N =}\NormalTok{ n) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\StringTok{"Type I"} \OtherTok{=}\NormalTok{ a}\SpecialCharTok{*}\NormalTok{N,}
+         \StringTok{"Type II"} \OtherTok{=}\NormalTok{ N }\SpecialCharTok{/}\NormalTok{ (b }\SpecialCharTok{+}\NormalTok{ N),}
+         \StringTok{"Type III"} \OtherTok{=}\NormalTok{ N}\SpecialCharTok{\^{}}\NormalTok{c }\SpecialCharTok{/}\NormalTok{ (b }\SpecialCharTok{+}\NormalTok{ N}\SpecialCharTok{\^{}}\NormalTok{c)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pivot\_longer}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics{ecological_interactions_files/figure-pdf/unnamed-chunk-16-1.pdf}
+
+}
+
+\end{figure}
+
+a is attack rate, and h is handling time. We refer to this functional
+response as a type II functional response (Fig. 8.6). As N gets really
+big, this fraction approaches 1/h,
+
+When is which FR reasonable?
+
+Ecologists refer to this activity as ``handling'' and the time required
+to do that as handling time. Buzz Holling (1959) developed a
+mathematical form for a functional response with prey-dependent
+predation that includes handling time:
+
+\hypertarget{other-numerical-responses}{%
+\subsection{Other numerical
+responses!}\label{other-numerical-responses}}
+
+\begin{itemize}
+\tightlist
+\item
+  I.e., the how the predators population growth rate varies with N, or
+  dP/dt vs.~N.
+\end{itemize}
+
+\hypertarget{other-predator-prey-models-1}{%
+\subsection{Other predator-prey
+models}\label{other-predator-prey-models-1}}
+
+\begin{itemize}
+\item
+  Endless possibilities
+\item
+  Let's look at the Rosenzweig and MacArthur model
+\end{itemize}
+
+Rosenzweig \& MacArthur (1963) American Naturalist
+
+\hypertarget{rosenzweig-and-macarthur}{%
+\subsection{Rosenzweig and MacArthur}\label{rosenzweig-and-macarthur}}
+
+\[\frac{dN}{dt}=r N(1-\alpha N) - \frac{\alpha N}{1+\alpha h N}P\]
+
+\[\frac{dP}{dt}=e\frac{\alpha N}{1+\alpha h N}P -m P\]
+
+What's going on here? Negative carrying capacity and type II
+
+\hypertarget{rosenzweig-and-macarthur-1}{%
+\subsection{Rosenzweig and MacArthur}\label{rosenzweig-and-macarthur-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# https://hankstevens.github.io/Primer{-}of{-}Ecology/cr.html}
+\NormalTok{cr\_RM\_pred }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(time, y, p)\{}
+\NormalTok{  N }\OtherTok{\textless{}{-}}\NormalTok{ y[}\DecValTok{1}\NormalTok{]}
+\NormalTok{  P }\OtherTok{\textless{}{-}}\NormalTok{ y[}\DecValTok{2}\NormalTok{]}
+  \FunctionTok{with}\NormalTok{(}\FunctionTok{as.list}\NormalTok{(p), \{}
+\NormalTok{    Ndot }\OtherTok{\textless{}{-}}\NormalTok{ r}\SpecialCharTok{*}\NormalTok{N}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ alpha}\SpecialCharTok{*}\NormalTok{N) }\SpecialCharTok{{-}}\NormalTok{ a}\SpecialCharTok{*}\NormalTok{N}\SpecialCharTok{*}\NormalTok{P}\SpecialCharTok{/}\NormalTok{(}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ a}\SpecialCharTok{*}\NormalTok{h}\SpecialCharTok{*}\NormalTok{N) }\CommentTok{\# prey}
+\NormalTok{    Pdot }\OtherTok{\textless{}{-}}\NormalTok{ e}\SpecialCharTok{*}\NormalTok{a}\SpecialCharTok{*}\NormalTok{N}\SpecialCharTok{*}\NormalTok{P}\SpecialCharTok{/}\NormalTok{(}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ a}\SpecialCharTok{*}\NormalTok{h}\SpecialCharTok{*}\NormalTok{N) }\SpecialCharTok{{-}}\NormalTok{ m}\SpecialCharTok{*}\NormalTok{P }\CommentTok{\# predator}
+    \FunctionTok{return}\NormalTok{(}\FunctionTok{list}\NormalTok{(}\FunctionTok{c}\NormalTok{(Ndot, Pdot)))}
+\NormalTok{  \})}
+\NormalTok{\}}
+
+\NormalTok{t }\OtherTok{\textless{}{-}} \DecValTok{0}\SpecialCharTok{:}\DecValTok{200}
+\NormalTok{y0 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\AttributeTok{N =} \DecValTok{100}\NormalTok{, }\AttributeTok{P =} \DecValTok{3}\NormalTok{)}
+
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}\AttributeTok{r =} \FloatTok{0.8}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.001}\NormalTok{, }\AttributeTok{a =} \FloatTok{0.02}\NormalTok{, }\AttributeTok{e =} \FloatTok{0.04}\NormalTok{, }\AttributeTok{m =}\NormalTok{ .}\DecValTok{15}\NormalTok{, }\AttributeTok{h =}\NormalTok{ .}\DecValTok{1}\NormalTok{)}
+
+\NormalTok{outdf }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{( }\FunctionTok{ode}\NormalTok{(y0, t, cr\_RM\_pred,  p) ) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{pivot\_longer}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{time, }\AttributeTok{names\_to =} \StringTok{"Population"}\NormalTok{, }\AttributeTok{values\_to =} \StringTok{"Abundance"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{rosenzweig-and-macarthur-2}{%
+\subsection{Rosenzweig and MacArthur}\label{rosenzweig-and-macarthur-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(outdf, }\FunctionTok{aes}\NormalTok{(time, Abundance, }\AttributeTok{colour =}\NormalTok{ Population)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Set2"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Time"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{ecological_interactions_files/figure-pdf/unnamed-chunk-18-1.pdf}
+
+}
+
+\end{figure}
+
+A damped oscillation means an oscillation that fades away with time.
+Eventually we will reach an equilibrium
+
+\hypertarget{rosenzweig-and-macarthur-3}{%
+\subsection{Rosenzweig and MacArthur}\label{rosenzweig-and-macarthur-3}}
+
+\begin{itemize}
+\tightlist
+\item
+  Paradox of enrichment!
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{images/paradox.png}
+
+}
+
+\end{figure}
+
+In each case, increasing the supply of limiting nutrients or energy
+tends to destroy the steady state. Thus man must be very careful in
+attempting to enrich an ecosystem in order to increase its food yield.
+There is a real chance that such activity may result in decimation of
+the food species that are wanted in greater abundance.
+
+\hypertarget{other-types-of-cycles}{%
+\subsection{Other types of cycles\ldots{}}\label{other-types-of-cycles}}
+
+\begin{itemize}
+\tightlist
+\item
+  We have seen predator-prey cycles, but populations can also cycle for
+  other reasons!
+\end{itemize}
+
+\hypertarget{cohort-cycles}{%
+\subsection{Cohort-cycles}\label{cohort-cycles}}
+
+\begin{figure}
+
+{\centering \includegraphics{images/cohort_cycles.png}
+
+}
+
+\end{figure}
+
+de Roos \emph{et al} (2003) Ecology Letters
+
+\hypertarget{competition}{%
+\subsection{Competition}\label{competition}}
+
+\begin{itemize}
+\item
+  Interference
+\item
+  Scramble / Exploitation
+\end{itemize}
+
+\begin{figure}
+
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{images/scramble.png}
+
+}
+
+}
+
+\end{minipage}%
+%
+\begin{minipage}[t]{0.50\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{images/deer.png}
+
+}
+
+}
+
+\end{minipage}%
+
+\end{figure}
+
+Which one have we already talked about?
+
+Male-male competition in red deer during rut is an example of
+interference competition within a species.
+
+Scramble competition, occurs indirectly when organisms both use a common
+limiting resource or shared food item. Instead of fighting or exhibiting
+aggressive behavior in order to win resources, exploitative competition
+occurs when resource use by one organism depletes the total amount
+available for other organism
+
+\hypertarget{l-v-competition-model}{%
+\subsection{L-V competition model}\label{l-v-competition-model}}
+
+\[\frac{dN_1}{dt}=r_1N_1(\frac{K_1-N_1-\alpha_{12}N_2}{K_1})\]
+\[\frac{dN_2}{dt}=r_2N_1(\frac{K_2-N_2-\alpha_{21}N_1}{K_2})\]
+
+alpha12 expresses the effect of one member of Population 2 on the growth
+rate of Population 1 alpha21 expresses the effect of one member of
+Population 1 on the growth rate of Population 2.
+
+\hypertarget{l-v-competition-model-1}{%
+\subsection{L-V competition model}\label{l-v-competition-model-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Find the zero-growth isocline for species \(N_1\)
+\end{itemize}
+
+\[\frac{dN_1}{dt}=r_1N_1(\frac{K_1-N_1-\alpha_{12}N_2}{K_1})\]
+\[0=r_1N_1(\frac{K_1-N_1-\alpha_{12}N_2}{K_1})\]
+
+\[0=\frac{K_1-N_1-\alpha_{12}N_2}{K_1}\]
+
+\[N_1=K_1-\alpha_{12}N_2\]
+
+The equilibrium is the population size at which the population stops
+growing. We can solve for this equilibrium by setting dN/dt for each
+species to zero and solving for N.
+
+\hypertarget{l-v-competition-model-2}{%
+\subsection{L-V competition model}\label{l-v-competition-model-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  Find the zero-growth isocline for species \(N_2\)
+\end{itemize}
+
+\[\frac{dN_2}{dt}=r_2N_1(\frac{K_2-N_2-\alpha_{21}N_1}{K_2})\]
+
+\[N_2=K_2-\alpha_{21}N_1\]
+
+Linear equation! We can use N1 and N2 as coordinates to graph each
+species ZNGI. We can graph this isocline by finding any two points along
+it and connecting them with a straight line.
+
+\hypertarget{l-v-competition-model-3}{%
+\subsection{L-V competition model}\label{l-v-competition-model-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{N }\OtherTok{\textless{}{-}} \DecValTok{0}\SpecialCharTok{:}\DecValTok{20}
+
+\CommentTok{\# Species 1 wins}
+\NormalTok{a\_21 }\OtherTok{\textless{}{-}} \FloatTok{0.75}
+\NormalTok{a\_12 }\OtherTok{\textless{}{-}} \DecValTok{1}
+\NormalTok{K\_1 }\OtherTok{\textless{}{-}} \FloatTok{1.5}
+\NormalTok{K\_2 }\OtherTok{\textless{}{-}} \DecValTok{1}
+
+\NormalTok{d1 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{N =}\NormalTok{ N) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{N2\_iso =}\NormalTok{ K\_2 }\SpecialCharTok{{-}}\NormalTok{ a\_21}\SpecialCharTok{*}\NormalTok{N,}
+         \AttributeTok{N1\_iso =}\NormalTok{ K\_1 }\SpecialCharTok{{-}}\NormalTok{ a\_12}\SpecialCharTok{*}\NormalTok{N,}
+         \AttributeTok{scenario =} \StringTok{"Species 1 wins"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{l-v-competition-model-4}{%
+\subsection{L-V competition model}\label{l-v-competition-model-4}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ d1) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ N, }\AttributeTok{y =}\NormalTok{ N2\_iso, }\AttributeTok{color =} \StringTok{"N2\_iso"}\NormalTok{), }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ N, }\AttributeTok{y =}\NormalTok{ N1\_iso, }\AttributeTok{color =} \StringTok{"N1\_iso"}\NormalTok{), }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.5}\NormalTok{), }\AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.5}\NormalTok{), }\AttributeTok{expand =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"Species 2"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Species 1"}\NormalTok{) }\SpecialCharTok{+}
+  \ConstantTok{NULL}
+
+\CommentTok{\# Species 2 wins}
+\NormalTok{a\_21 }\OtherTok{\textless{}{-}} \DecValTok{1}
+\NormalTok{a\_12 }\OtherTok{\textless{}{-}} \FloatTok{0.75}
+\NormalTok{K\_1 }\OtherTok{\textless{}{-}} \DecValTok{1}
+\NormalTok{K\_2 }\OtherTok{\textless{}{-}} \FloatTok{1.5}
+
+\NormalTok{d2 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{N =}\NormalTok{ N) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{N2\_iso =}\NormalTok{ K\_2 }\SpecialCharTok{{-}}\NormalTok{ a\_21}\SpecialCharTok{*}\NormalTok{N,}
+         \AttributeTok{N1\_iso =}\NormalTok{ K\_1 }\SpecialCharTok{{-}}\NormalTok{ a\_12}\SpecialCharTok{*}\NormalTok{N,}
+         \AttributeTok{scenario =} \StringTok{"Species 2 wins"}\NormalTok{)}
+
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ d2) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ N, }\AttributeTok{y =}\NormalTok{ N2\_iso, }\AttributeTok{color =} \StringTok{"N2\_iso"}\NormalTok{), }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ N, }\AttributeTok{y =}\NormalTok{ N1\_iso, }\AttributeTok{color =} \StringTok{"N1\_iso"}\NormalTok{), }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.5}\NormalTok{), }\AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.5}\NormalTok{), }\AttributeTok{expand =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"Species 2"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Species 1"}\NormalTok{) }\SpecialCharTok{+}
+  \ConstantTok{NULL}
+
+\CommentTok{\# Unstable equilibrium}
+\NormalTok{a\_21 }\OtherTok{\textless{}{-}} \FloatTok{1.25}
+\NormalTok{a\_12 }\OtherTok{\textless{}{-}} \FloatTok{0.75}
+\NormalTok{K\_1 }\OtherTok{\textless{}{-}} \DecValTok{1}
+\NormalTok{K\_2 }\OtherTok{\textless{}{-}} \FloatTok{1.5}
+
+\NormalTok{d3 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{N =}\NormalTok{ N) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{N2\_iso =}\NormalTok{ K\_2 }\SpecialCharTok{{-}}\NormalTok{ a\_21}\SpecialCharTok{*}\NormalTok{N,}
+         \AttributeTok{N1\_iso =}\NormalTok{ K\_1 }\SpecialCharTok{{-}}\NormalTok{ a\_12}\SpecialCharTok{*}\NormalTok{N,}
+         \AttributeTok{scenario =} \StringTok{"Unstable equilibrium"}\NormalTok{)}
+
+\NormalTok{p3 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ d3) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ N, }\AttributeTok{y =}\NormalTok{ N2\_iso, }\AttributeTok{color =} \StringTok{"N2\_iso"}\NormalTok{), }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ N, }\AttributeTok{y =}\NormalTok{ N1\_iso, }\AttributeTok{color =} \StringTok{"N1\_iso"}\NormalTok{), }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.5}\NormalTok{), }\AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.5}\NormalTok{), }\AttributeTok{expand =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"Species 2"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Species 1"}\NormalTok{) }\SpecialCharTok{+}
+  \ConstantTok{NULL}
+
+\CommentTok{\# Stable equilibrium}
+\NormalTok{a\_21 }\OtherTok{\textless{}{-}} \FloatTok{0.5}
+\NormalTok{a\_12 }\OtherTok{\textless{}{-}} \DecValTok{1}
+\NormalTok{K\_1 }\OtherTok{\textless{}{-}} \FloatTok{1.5}
+\NormalTok{K\_2 }\OtherTok{\textless{}{-}} \DecValTok{1}
+
+\NormalTok{d4 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{N =}\NormalTok{ N) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{N2\_iso =}\NormalTok{ K\_2 }\SpecialCharTok{{-}}\NormalTok{ a\_21}\SpecialCharTok{*}\NormalTok{N,}
+         \AttributeTok{N1\_iso =}\NormalTok{ K\_1 }\SpecialCharTok{{-}}\NormalTok{ a\_12}\SpecialCharTok{*}\NormalTok{N,}
+         \AttributeTok{scenario =} \StringTok{"Stable equilibrium"}\NormalTok{)}
+
+\NormalTok{p4 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ d) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ N, }\AttributeTok{y =}\NormalTok{ N2\_iso, }\AttributeTok{color =} \StringTok{"N2\_iso"}\NormalTok{), }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ N, }\AttributeTok{y =}\NormalTok{ N1\_iso, }\AttributeTok{color =} \StringTok{"N1\_iso"}\NormalTok{), }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.5}\NormalTok{), }\AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.5}\NormalTok{), }\AttributeTok{expand =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"Species 2"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Species 1"}\NormalTok{) }\SpecialCharTok{+}
+  \ConstantTok{NULL}
+
+\CommentTok{\#(p1 | p2) /  (p3 | p4) + plot\_layout(guides = "collect")}
+
+\NormalTok{d }\OtherTok{\textless{}{-}} \FunctionTok{bind\_rows}\NormalTok{(d1, d2, d3, d4)}
+
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ d) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ N, }\AttributeTok{y =}\NormalTok{ N2\_iso, }\AttributeTok{color =} \StringTok{"2 isocline"}\NormalTok{), }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ N, }\AttributeTok{y =}\NormalTok{ N1\_iso, }\AttributeTok{color =} \StringTok{"1 isocline"}\NormalTok{), }\AttributeTok{size =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_cartesian}\NormalTok{(}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.5}\NormalTok{), }\AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.5}\NormalTok{), }\AttributeTok{expand =} \DecValTok{0}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \StringTok{"Species 2"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Species 1"}\NormalTok{, }\AttributeTok{color =} \StringTok{"Species"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{scenario, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{, }\AttributeTok{scales =} \StringTok{"free"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{scale\_color\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Set2"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{aspect.ratio =} \DecValTok{4}\SpecialCharTok{/}\DecValTok{5}\NormalTok{,}
+        \AttributeTok{strip.background =} \FunctionTok{element\_rect}\NormalTok{(}\AttributeTok{fill =} \StringTok{"gray95"}\NormalTok{),}
+        \AttributeTok{strip.text =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{margin =} \FunctionTok{margin}\NormalTok{(}\AttributeTok{b =} \DecValTok{2}\NormalTok{, }\AttributeTok{t =} \DecValTok{2}\NormalTok{), }\AttributeTok{color =} \StringTok{"grey10"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{ecological_interactions_files/figure-pdf/unnamed-chunk-20-1.pdf}
+
+}
+
+\end{figure}
+
+Simply put, for species to coexist stably, their effects on themselves
+must be greater than their effects on each other
+
+\hypertarget{epilogue}{%
+\subsection{Epilogue}\label{epilogue}}
+
+\begin{itemize}
+\tightlist
+\item
+  If models keep being still are too unrealistic even after adding
+  realistic features, why do we use them?
+\end{itemize}
+
+Also, what do we not include here? Stochasticity, environmental
+dependence Interactions vary with space and time and environment and
+size\ldots{}
+
+\begin{figure}
+
+{\centering \includegraphics{images/g_box.png}
+
+}
+
+\end{figure}
+
+Also, what do we not include here? Stochasticity, environmental
+dependence Interactions vary with space and time and environment and
+size\ldots{}
+
+\hypertarget{quantifying-species-interactions-in-natural-systems}{%
+\section{3. Quantifying species interactions in natural
+systems}\label{quantifying-species-interactions-in-natural-systems}}
+
+\hypertarget{quantifying-species-interactions-in-natural-systems-1}{%
+\subsection{3. Quantifying species interactions in natural
+systems}\label{quantifying-species-interactions-in-natural-systems-1}}
+
+\begin{itemize}
+\item
+  We know how some ideas on how to model interactions mathematically
+\item
+  How do we determine if and what species interactions occur in the
+  wild?
+\end{itemize}
+
+Diet data, trait-data, Abundance data (e.g., from scientific trawl
+surveys), Apply statistical models
+
+\hypertarget{diet-data}{%
+\subsection{Diet data}\label{diet-data}}
+
+\begin{itemize}
+\tightlist
+\item
+  We collect stomach content data for key species (read: commercial)
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{images/diet.png}
+
+}
+
+\end{figure}
+
+\hypertarget{diet-data-example-baltic-cod}{%
+\subsection{Diet data: example Baltic
+cod}\label{diet-data-example-baltic-cod}}
+
+\hypertarget{diet-data-example-baltic-cod-1}{%
+\subsection{Diet data: example Baltic
+cod}\label{diet-data-example-baltic-cod-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Bioenergetic models + diet information = cod grow worse today
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.55\textwidth,height=\textheight]{images/eq1.png}
+
+}
+
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\textwidth,height=\textheight]{images/eq2.png}
+
+}
+
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\textwidth,height=\textheight]{images/eq3.png}
+
+}
+
+\end{figure}
+
+Neuenfeldt \emph{et al} (2020) ICESJMS
+
+\hypertarget{diet-data-example-baltic-cod-2}{%
+\subsection{Diet data: example Baltic
+cod}\label{diet-data-example-baltic-cod-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  Bioenergetic models + diet information = cod grow worse today
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{images/neuen.png}
+
+}
+
+\end{figure}
+
+Neuenfeldt \emph{et al} (2020) ICESJMS
+
+\hypertarget{diet-data-example-baltic-cod-3}{%
+\subsection{Diet data: example Baltic
+cod}\label{diet-data-example-baltic-cod-3}}
+
+\begin{figure}
+
+{\centering \includegraphics{images/skinny_cod.png}
+
+}
+
+\end{figure}
+
+Lunneryd 2020, Aqua Reports
+
+\hypertarget{predation-in-space}{%
+\subsection{Predation in space!}\label{predation-in-space}}
+
+\begin{itemize}
+\tightlist
+\item
+  Diets, predators, and prey vary in space
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{images/goodman1.png}
+
+}
+
+\end{figure}
+
+Goodman \emph{et al} (2022) Ecography
+
+This paper also uses biomass data\ldots{}
+
+\hypertarget{predation-in-space-1}{%
+\subsection{Predation in space!}\label{predation-in-space-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Diets, predators, and prey vary in space
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{images/goodman2.png}
+
+}
+
+\end{figure}
+
+Goodman \emph{et al} (2022) Ecography
+
+\hypertarget{predation-in-space-2}{%
+\subsection{Predation in space!}\label{predation-in-space-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  Diets, predators, and prey vary in space
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{images/goodman3.png}
+
+}
+
+\end{figure}
+
+Goodman \emph{et al} (2022) Ecography
+
+\hypertarget{competition-1}{%
+\subsection{Competition}\label{competition-1}}
+
+\begin{itemize}
+\item
+  Sprat and herring affect the abundance of zooplankton
+\item
+  In sprat, zooplankton in stomachs correlated with condition
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{images/casini_sprat.png}
+
+}
+
+\end{figure}
+
+Casini \emph{et al} (2006) Oikos
+
+Here we use in addition some other metric: condition! require other
+samples
+
+Also, we haven't touched on experiments
+
+\hypertarget{species-interactions-in-fisheries-research}{%
+\section{4. Species interactions in fisheries
+research}\label{species-interactions-in-fisheries-research}}
+
+\hypertarget{species-interactions-in-fisheries-research-1}{%
+\subsection{4. Species interactions in fisheries
+research}\label{species-interactions-in-fisheries-research-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Statistical or Mathematical approaches
+\end{itemize}
+
+\hypertarget{in-stock-assessment}{%
+\subsection{In stock assessment}\label{in-stock-assessment}}
+
+\begin{itemize}
+\item
+  Mainly in terms of predation (natural mortality), not on growth
+  parameters (competition!
+\item
+  SMS model: catch-at-age, survey abundance, stomach data
+\item
+  (statistical approach)
+\end{itemize}
+
+Lewy \& Vinther (2004) ICES CM
+
+\hypertarget{natural-mortality-rates}{%
+\subsection{Natural mortality rates}\label{natural-mortality-rates}}
+
+\begin{figure}
+
+{\centering \includegraphics{images/sms.png}
+
+}
+
+\end{figure}
+
+Lewy \& Vinther (2004) ICES CM
+
+\hypertarget{food-web-models-strategic-advice}{%
+\subsection{Food web models: strategic
+advice}\label{food-web-models-strategic-advice}}
+
+\begin{itemize}
+\tightlist
+\item
+  Size-spectrum models
+\end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics{images/blanch3.png}
+
+}
+
+\end{figure}
+
+Blanchard et al (2017) TREE
+
+Read the boxes
+
+\hypertarget{food-web-models-strategic-advice-1}{%
+\subsection{Food web models: strategic
+advice}\label{food-web-models-strategic-advice-1}}
+
+\begin{figure}
+
+{\centering \includegraphics{images/concept_figure.png}
+
+}
+
+\end{figure}
+
+Lindmark et al (2022) GCB; Scott et al (2014) Methods in Ecology \&
+Evolution; Andersen (2019) Princeton University Press
+
+strategic vs tactical, Based on ``first principles'', higher
+independence
+
+\hypertarget{food-web-models-strategic-advice-2}{%
+\subsection{Food web models: strategic
+advice}\label{food-web-models-strategic-advice-2}}
+
+\begin{figure}
+
+{\centering \includegraphics{images/blanch1.png}
+
+}
+
+\end{figure}
+
+Blanchard et al (2014) Journal of Applied Ecology
+
+strategic vs tactical
+
+\hypertarget{food-web-models-strategic-advice-3}{%
+\subsection{Food web models: strategic
+advice}\label{food-web-models-strategic-advice-3}}
+
+\begin{figure}
+
+{\centering \includegraphics{images/blanch2.png}
+
+}
+
+\end{figure}
+
+Blanchard et al (2014) Journal of Applied Ecology
+
+strategic vs tactical
+
+\hypertarget{mathematical-or-statistical}{%
+\subsection{Mathematical or
+statistical?}\label{mathematical-or-statistical}}
+
+\includegraphics{images/whynotboth.png} ::: \{.notes\} Many of these
+models are based upon statistical techniques and are good at assessing
+the current state and making short-term predictions; however, as they do
+not model interactions between stocks, they lack predictive power on
+longer timescales. Additionally, there are size-based multi-species
+models that represent key biological processes and consider interactions
+between stocks such as predation and competition for resources. Due to
+the complexity of these models, they are difficult to fit to data, and
+so many size-based multi-species models depend upon single-species
+models where they exist, or ad hoc assumptions when they do not, for
+parameters such as annual fishing mortality. :::
+
+\hypertarget{question-time}{%
+\subsection{Question time!}\label{question-time}}
+
+
+
+\end{document}

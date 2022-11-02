@@ -407,8 +407,8 @@
 <section id="who-are-you" class="slide level2">
 <h2>Who are you … ?</h2>
 </section>
-<section id="plan-for-the-4-session-lecture-on-ecological-interactions-and-dynamics" class="slide level2">
-<h2>Plan for the 4-session lecture on Ecological interactions and Dynamics</h2>
+<section id="plan-for-today" class="slide level2">
+<h2>Plan for today</h2>
 <ul>
 <li><p>Theoretical</p>
 <ul>
@@ -435,13 +435,15 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="plan-for-the-4-session-lecture-on-ecological-interactions-and-dynamics-1" class="slide level2">
-<h2>Plan for the 4-session lecture on Ecological interactions and Dynamics</h2>
+<section id="plan-for-today-1" class="slide level2">
+<h2>Plan for today</h2>
 <ul>
 <li><p>Have questions?</p>
 <ul>
 <li>Just interrupt and ask, write in chat or ask during our break. Thanks!</li>
 </ul></li>
+<li><p>Slides can be found here: <a href="https://github.com/maxlindmark/pfs" class="uri">https://github.com/maxlindmark/pfs</a></p></li>
+<li><p>And on Canvas</p></li>
 </ul>
 </section>
 <section id="motivating-questions" class="slide level2">
@@ -454,6 +456,11 @@
 <li><p>Because it is a basic scientific question (ecology is a young discipline!)</p></li>
 </ul></li>
 </ul>
+</section></section>
+<section>
+<section id="brief-recap-on-population-ecology" class="title-slide slide level1 center">
+<h1>1. Brief recap on population ecology</h1>
+
 </section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>
@@ -486,6 +493,11 @@
 </section>
 <section id="the-simplest-population-model-1" class="slide level2">
 <h2>The simplest population model</h2>
+<p><span class="math display">\[r = b - d\]</span></p>
+<p><span class="math display">\[\frac{dN}{dt}=rN\]</span></p>
+</section>
+<section id="the-simplest-population-model-2" class="slide level2">
+<h2>The simplest population model</h2>
 <ul>
 <li>Solution to this first-order differential equation:</li>
 </ul>
@@ -494,7 +506,7 @@
 <li>Exponential growth for positive <span class="math inline">\(r\)</span> and exponential decline for negative <span class="math inline">\(r\)</span></li>
 </ul>
 </section>
-<section id="the-simplest-population-model-2" class="slide level2">
+<section id="the-simplest-population-model-3" class="slide level2">
 <h2>The simplest population model</h2>
 <p><span class="math display">\[N(t)=N_0e^{rt}\]</span></p>
 <div class="cell">
@@ -505,23 +517,27 @@
 <span id="cb1-5"><a href="#cb1-5"></a>         <span class="at">pc_dNdt =</span> (r<span class="sc">*</span>N)<span class="sc">/</span>N)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="the-simplest-population-model-3" class="slide level2">
+<section id="the-simplest-population-model-4" class="slide level2">
 <h2>The simplest population model</h2>
 
-<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"><ul>
+<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch quarto-figure-center"><ul>
 <li>Per-capita growth rates unaffected by density</li>
 <li>Population growth rates increase with size!</li>
 </ul>
 </section>
-<section id="the-simplest-population-model-4" class="slide level2">
+<section id="the-simplest-population-model-5" class="slide level2">
 <h2>The simplest population model</h2>
 <ul>
 <li>Equilibrium?</li>
 </ul>
 <p><span class="math display">\[\frac{dN}{dt}=rN\]</span></p>
+</section>
+<section id="the-simplest-population-model-6" class="slide level2">
+<h2>The simplest population model</h2>
 <ul>
 <li>What’s wrong with this model?</li>
 </ul>
+<p><span class="math display">\[\frac{dN}{dt}=rN\]</span></p>
 </section>
 <section id="population-regulation" class="slide level2">
 <h2>Population regulation</h2>
@@ -609,7 +625,7 @@
 <section id="the-logistic-growth-model-5" class="slide level2">
 <h2>The logistic growth model</h2>
 
-<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="the-logistic-growth-model-6" class="slide level2">
 <h2>The logistic growth model</h2>
 <p><span class="math display">\[\frac{dN}{dt}=rN(1-\frac{N}{K})\]</span></p>
@@ -630,13 +646,13 @@
 <section id="the-logistic-growth-model-7" class="slide level2">
 <h2>The logistic growth model</h2>
 
-<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="the-logistic-growth-model-8" class="slide level2">
 <h2>The logistic growth model</h2>
 <p><span class="math display">\[\frac{dN}{dt}=rN(1-\frac{N}{K})\]</span></p>
 <ul>
 <li><p>Another useful technique is to find the equilibria with algebra</p></li>
-<li><p>set <span class="math inline">\(\frac{dN}{dt}=0\)</span></p></li>
+<li><p>Set <span class="math inline">\(\frac{dN}{dt}=0\)</span></p></li>
 </ul>
 <aside class="notes">
 <p>remind them of equilibria</p>
@@ -675,15 +691,33 @@
 <li>Is it really a law of nature?</li>
 </ul>
 
-<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"><aside class="notes">
+<p>There are many other forms of dd…</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="the-logistic-growth-model-12" class="slide level2">
 <h2>The logistic growth model</h2>
 <ul>
-<li>… There are other models where growth depends on population size, e.g., Gompertz</li>
+<li>… There are other models where growth depends on population size, e.g., Gompertz, and it may of course have different shape the linear!</li>
 </ul>
 
-<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
-<section id="species-interactions" class="slide level2">
+<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="species-interactions" class="title-slide slide level1 center">
+<h1>2. Species interactions</h1>
+
+</section>
+<section id="species-interactions-1" class="slide level2">
 <h2>2. Species interactions</h2>
 <ul>
 <li><p><strong>Predation]</strong>[parasitism] (-, +)</p></li>
@@ -692,16 +726,43 @@
 <li><p>Amensialism (0, -)</p></li>
 <li><p>Commensalism (0, +)</p></li>
 </ul>
+<aside class="notes">
+<p>always individuals interacting! Inter or intraspecific?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="predation" class="slide level2">
 <h2>Predation</h2>
 
-<img data-src="images/big_fish.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/big_fish.png" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>Staying in the theoretical lane a bit longer, we’ll look at species interactions with a set of <strong>coupled</strong> ODE’s</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="the-original-predator-prey-model" class="slide level2">
 <h2>The original predator-prey model</h2>
 <ul>
 <li><p>Lotka-Volterra</p></li>
 <li><p>Published independently by Alfred J. Lotka and Vito Volterra in 1925 &amp; 1926</p></li>
+<li><p>Widely used and analyzed today</p></li>
 </ul>
 </section>
 <section id="the-original-predator-prey-model-1" class="slide level2">
@@ -711,16 +772,16 @@
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <div class="quarto-figure quarto-figure-left">
 <figure>
-<p></p><figcaption>Alfred J. Lotka</figcaption><p></p>
 <p><img data-src="images/lotka.png"></p>
+<p></p><figcaption>Alfred J. Lotka</figcaption><p></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <div class="quarto-figure quarto-figure-left">
 <figure>
-<p></p><figcaption>Vito Volterra</figcaption><p></p>
 <p><img data-src="images/vito.png"></p>
+<p></p><figcaption>Vito Volterra</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -734,31 +795,31 @@
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <div class="quarto-figure quarto-figure-left">
 <figure>
-<p></p><figcaption>Alfred J. Lotka</figcaption><p></p>
 <p><img data-src="images/lotka.png"></p>
+<p></p><figcaption>Alfred J. Lotka</figcaption><p></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <div class="quarto-figure quarto-figure-left">
 <figure>
-<p></p><figcaption>Vito Volterra</figcaption><p></p>
 <p><img data-src="images/vito.png"></p>
+<p></p><figcaption>Vito Volterra</figcaption><p></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <div class="quarto-figure quarto-figure-left">
 <figure>
-<p></p><figcaption>Umberto D’Ancona</figcaption><p></p>
 <p><img data-src="images/umberto.png"></p>
+<p></p><figcaption>Umberto D’Ancona</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-<aside class="notes">
-<p>Volterra’s enquiry was inspired through his interactions with the marine biologist Umberto D’Ancona, who was courting his daughter Luisa Volterra at the time and later was to become his son-in-law. D’Ancona studied the fish catches in the Adriatic Sea and had noticed that the percentage of Selachians caught had increased during the years of World War I (1914–18), and the relative abundance of prey followed the opposite pattern. This puzzled him, as the fishing effort had been very much reduced during the war years.</p>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<aside class="notes quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p>Volterra’s enquiry was inspired through his interactions with the marine biologist Umberto D’Ancona, who was courting his daughter Luisa Volterra at the time and later was to become his son-in-law. D’Ancona studied the fish catches in the Adriatic Sea and had noticed that the percentage of Selachians caught had increased during the years of World War I (1914â“18), and the relative abundance of prey followed the opposite pattern. This puzzled him, as the fishing effort had been very much reduced during the war years.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -770,6 +831,8 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</div>
+</div>
 </section>
 <section id="the-original-predator-prey-model-3" class="slide level2">
 <h2>The original predator-prey model</h2>
@@ -787,14 +850,21 @@
 <section id="the-original-predator-prey-model-4" class="slide level2">
 <h2>The original predator-prey model</h2>
 <ul>
-<li>The equations Volterra wrote down to describe Umberto’s system where:</li>
+<li>Volterra wrote down these eqns to Umberto’s:</li>
 </ul>
 <p><span class="math display">\[\frac{dN}{dt}=\alpha N - \beta NP\]</span> <span class="math display">\[\frac{dP}{dt}=\delta \beta NP-\gamma P\]</span></p>
 <ul>
-<li>How does the prey grow in absence of predators? How does the predator population decline in the absence of prey? What is <span class="math inline">\(b\)</span>?</li>
+<li>How does the prey grow in absence of predators? How does the predator population decline in the absence of prey? What is <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\delta\)</span>?</li>
 </ul>
 <aside class="notes">
-<p>coupled differential equations exponentially</p>
+<ol type="1">
+<li>exponentially (set P = 0 and it becomes the first growth model we looked at)</li>
+<li>Also exponentially</li>
+<li>Predation/attack rate and conversion efficiency</li>
+</ol>
+<ul>
+<li>The cost to the victim is always greater than the benefit to the enemy.</li>
+</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -814,19 +884,54 @@
 </ul>
 <p><span class="math display">\[\frac{dN}{dt}=\alpha N - \beta NP\]</span></p>
 <p><span class="math display">\[\frac{dP}{dt}=\delta \beta NP-\gamma P\]</span></p>
-<ul>
-<li>“Attack rate” given by:</li>
-</ul>
-<p><span class="math display">\[\beta N\]</span></p>
 </section>
-<section id="functional-respose" class="slide level2">
-<h2>Functional respose</h2>
-<ul>
-<li>Type I</li>
-</ul>
-
-<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
 <section id="lotka-volterra-model-1" class="slide level2">
+<h2>Lotka-Volterra model</h2>
+<ul>
+<li><p>Zero-net growth isoclines</p></li>
+<li><p>set <span class="math inline">\(\frac{dN}{dt}\)</span> or <span class="math inline">\(\frac{dP}{dt}\)</span> = 0, break out <span class="math inline">\(P\)</span> and <span class="math inline">\(N\)</span></p></li>
+</ul>
+<p><span class="math display">\[\frac{dN}{dt}=\alpha N - \beta NP\]</span></p>
+<p><span class="math display">\[\frac{dP}{dt}=\delta \beta NP-\gamma P\]</span></p>
+<aside class="notes">
+<p>How do we find the isoclines? what do they mean here</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="prey-zero-growth-isoclines" class="slide level2">
+<h2>Prey zero growth isoclines</h2>
+<p><span class="math display">\[\frac{dN}{dt}=\alpha N - \beta NP\]</span></p>
+<p><span class="math display">\[0=\alpha N - \beta NP\]</span> <span class="math display">\[0=\alpha - \beta P\]</span> <span class="math display">\[P=\frac{\alpha}  {\beta} \]</span></p>
+</section>
+<section id="predator-zero-growth-isoclines" class="slide level2">
+<h2>Predator zero growth isoclines</h2>
+<p><span class="math display">\[\frac{dP}{dt}=\delta \beta NP-\gamma P\]</span></p>
+<p><span class="math display">\[0=\delta \beta NP-\gamma P\]</span> <span class="math display">\[0=\delta \beta N-\gamma\]</span></p>
+<p><span class="math display">\[P=\frac{\gamma}  {\delta\beta} \]</span></p>
+<aside class="notes">
+<p>This shows us that the prey increase whenever the predator abundance is below a certain value. We found that value above, and it is P=r/a. When does the predator increase or decrease? When the prey is above or below a particular value, N=m/(ea). The only time these populations are at rest is when both of these are true.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="lotka-volterra-model-2" class="slide level2">
 <h2>Lotka-Volterra model</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># https://strimas.com/post/lotka-volterra/</span></span>
@@ -848,20 +953,33 @@
 <span id="cb4-17"><a href="#cb4-17"></a>lv_results <span class="ot">&lt;-</span> <span class="fu">ode</span>(init, times, deriv, pars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="lotka-volterra-model-2" class="slide level2">
+<section id="lotka-volterra-model-3" class="slide level2">
 <h2>Lotka-Volterra model</h2>
 <ul>
 <li>A cyclic model</li>
 </ul>
 
-<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
-<section id="lotka-volterra-model-3" class="slide level2">
+<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>Prey increase until predators are sufficiently abundant to control them, at which point they decline, leading to the decline of preadtors. The predator peaks lag behind the prey peaks</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="lotka-volterra-model-4" class="slide level2">
 <h2>Lotka-Volterra model</h2>
 <ul>
 <li>A cyclic model: phase plot</li>
 </ul>
 
-<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch quarto-figure-center"></section>
 <section id="a-famous-example" class="slide level2">
 <h2>A famous example</h2>
 <ul>
@@ -889,20 +1007,162 @@
 <section id="other-predator-prey-models" class="slide level2">
 <h2>Other predator-prey models</h2>
 <ul>
-<li>Rosenzweig-MacArthur</li>
+<li>How can we incorporate more realism into the Lotka-Volterra model?</li>
+</ul>
+<aside class="notes">
+<p>predator functional response, prey growth rate (numerical response), predation depending on no. predators?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="functional-respose" class="slide level2">
+<h2>Functional respose</h2>
+<ul>
+<li>“Kill rate”, in the LV model given by:</li>
+</ul>
+<p><span class="math display">\[\beta N\]</span></p>
+<ul>
+<li>We call this a Type I functional response</li>
+</ul>
+
+<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<section id="other-functional-responses" class="slide level2">
+<h2>Other functional responses!</h2>
+<ul>
+<li><p>Type I: <span class="math inline">\(\alpha N\)</span></p></li>
+<li><p>Type II: <span class="math inline">\(\frac {\alpha N}{1+\alpha h N}\)</span></p></li>
+<li><p>Type III: <span class="math inline">\(\frac {\alpha N^c}{1+\alpha h N^c}\)</span></p></li>
 </ul>
 </section>
-<section id="another-functional-response" class="slide level2">
-<h2>Another functional response!</h2>
+<section id="other-functional-responses-1" class="slide level2">
+<h2>Other functional responses!</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.1</span>); a <span class="ot">&lt;-</span> <span class="fl">0.5</span>; b <span class="ot">&lt;-</span> <span class="dv">1</span>; c <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">N =</span> n) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">mutate</span>(<span class="st">"Type I"</span> <span class="ot">=</span> a<span class="sc">*</span>N,</span>
+<span id="cb5-5"><a href="#cb5-5"></a>         <span class="st">"Type II"</span> <span class="ot">=</span> N <span class="sc">/</span> (b <span class="sc">+</span> N),</span>
+<span id="cb5-6"><a href="#cb5-6"></a>         <span class="st">"Type III"</span> <span class="ot">=</span> N<span class="sc">^</span>c <span class="sc">/</span> (b <span class="sc">+</span> N<span class="sc">^</span>c)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-7"><a href="#cb5-7"></a>  <span class="fu">pivot_longer</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>a is attack rate, and h is handling time. We refer to this functional response as a type II functional response (Fig. 8.6). As N gets really big, this fraction approaches 1/h,</p>
+<p>When is which FR reasonable?</p>
+<p>Ecologists refer to this activity as “handling” and the time required to do that as handling time. Buzz Holling (1959) developed a mathematical form for a functional response with prey-dependent predation that includes handling time:</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="other-numerical-responses" class="slide level2">
+<h2>Other numerical responses!</h2>
 <ul>
-<li>Type II</li>
+<li>I.e., the how the predators population growth rate varies with N, or dP/dt vs.&nbsp;N.</li>
 </ul>
 </section>
-<section id="type-iii-functional-respionse" class="slide level2">
-<h2>Type III functional respionse</h2>
+<section id="other-predator-prey-models-1" class="slide level2">
+<h2>Other predator-prey models</h2>
 <ul>
-<li>OK</li>
+<li><p>Endless possibilities</p></li>
+<li><p>Let’s look at the Rosenzweig and MacArthur model</p></li>
 </ul>
+<div class="footer">
+<p>Rosenzweig &amp; MacArthur (1963) American Naturalist</p>
+</div>
+</section>
+<section id="rosenzweig-and-macarthur" class="slide level2">
+<h2>Rosenzweig and MacArthur</h2>
+<p><span class="math display">\[\frac{dN}{dt}=r N(1-\alpha N) - \frac{\alpha N}{1+\alpha h N}P\]</span></p>
+<p><span class="math display">\[\frac{dP}{dt}=e\frac{\alpha N}{1+\alpha h N}P -m P\]</span></p>
+<aside class="notes">
+<p>What’s going on here? Negative carrying capacity and type II</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="rosenzweig-and-macarthur-1" class="slide level2">
+<h2>Rosenzweig and MacArthur</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># https://hankstevens.github.io/Primer-of-Ecology/cr.html</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>cr_RM_pred <span class="ot">&lt;-</span> <span class="cf">function</span>(time, y, p){</span>
+<span id="cb6-3"><a href="#cb6-3"></a>  N <span class="ot">&lt;-</span> y[<span class="dv">1</span>]</span>
+<span id="cb6-4"><a href="#cb6-4"></a>  P <span class="ot">&lt;-</span> y[<span class="dv">2</span>]</span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(p), {</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    Ndot <span class="ot">&lt;-</span> r<span class="sc">*</span>N<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> alpha<span class="sc">*</span>N) <span class="sc">-</span> a<span class="sc">*</span>N<span class="sc">*</span>P<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> a<span class="sc">*</span>h<span class="sc">*</span>N) <span class="co"># prey</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>    Pdot <span class="ot">&lt;-</span> e<span class="sc">*</span>a<span class="sc">*</span>N<span class="sc">*</span>P<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> a<span class="sc">*</span>h<span class="sc">*</span>N) <span class="sc">-</span> m<span class="sc">*</span>P <span class="co"># predator</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>    <span class="fu">return</span>(<span class="fu">list</span>(<span class="fu">c</span>(Ndot, Pdot)))</span>
+<span id="cb6-9"><a href="#cb6-9"></a>  })</span>
+<span id="cb6-10"><a href="#cb6-10"></a>}</span>
+<span id="cb6-11"><a href="#cb6-11"></a></span>
+<span id="cb6-12"><a href="#cb6-12"></a>t <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">200</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>y0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">N =</span> <span class="dv">100</span>, <span class="at">P =</span> <span class="dv">3</span>)</span>
+<span id="cb6-14"><a href="#cb6-14"></a></span>
+<span id="cb6-15"><a href="#cb6-15"></a>p <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">r =</span> <span class="fl">0.8</span>, <span class="at">alpha =</span> <span class="fl">0.001</span>, <span class="at">a =</span> <span class="fl">0.02</span>, <span class="at">e =</span> <span class="fl">0.04</span>, <span class="at">m =</span> .<span class="dv">15</span>, <span class="at">h =</span> .<span class="dv">1</span>)</span>
+<span id="cb6-16"><a href="#cb6-16"></a></span>
+<span id="cb6-17"><a href="#cb6-17"></a>outdf <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>( <span class="fu">ode</span>(y0, t, cr_RM_pred,  p) ) <span class="sc">%&gt;%</span></span>
+<span id="cb6-18"><a href="#cb6-18"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>time, <span class="at">names_to =</span> <span class="st">"Population"</span>, <span class="at">values_to =</span> <span class="st">"Abundance"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="rosenzweig-and-macarthur-2" class="slide level2">
+<h2>Rosenzweig and MacArthur</h2>
+
+<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>A damped oscillation means an oscillation that fades away with time. Eventually we will reach an equilibrium</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="rosenzweig-and-macarthur-3" class="slide level2">
+<h2>Rosenzweig and MacArthur</h2>
+<ul>
+<li>Paradox of enrichment!</li>
+</ul>
+
+<img data-src="images/paradox.png" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>In each case, increasing the supply of limiting nutrients or energy tends to destroy the steady state. Thus man must be very careful in attempting to enrich an ecosystem in order to increase its food yield. There is a real chance that such activity may result in decimation of the food species that are wanted in greater abundance.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="other-types-of-cycles" class="slide level2">
 <h2>Other types of cycles…</h2>
@@ -912,21 +1172,67 @@
 </section>
 <section id="cohort-cycles" class="slide level2">
 <h2>Cohort-cycles</h2>
-<ul>
-<li>We have seen predator-prey cycles, but populations can also cycle for other reasons!</li>
-</ul>
+
+<img data-src="images/cohort_cycles.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>de Roos <em>et al</em> (2003) Ecology Letters</p>
+</div>
 </section>
 <section id="competition" class="slide level2">
 <h2>Competition</h2>
 <ul>
+<li><p>Interference</p></li>
 <li><p>Scramble / Exploitation</p></li>
-<li><p>Already touched briefly on intraspecific interactions / density dependence!</p></li>
 </ul>
-
-<img data-src="images/competition.png" class="r-stretch quarto-figure-center"></section>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/scramble.png"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/deer.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Which one have we already talked about?</p>
+<p>Male-male competition in red deer during rut is an example of interference competition within a species.</p>
+<p>Scramble competition, occurs indirectly when organisms both use a common limiting resource or shared food item. Instead of fighting or exhibiting aggressive behavior in order to win resources, exploitative competition occurs when resource use by one organism depletes the total amount available for other organism</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="l-v-competition-model" class="slide level2">
 <h2>L-V competition model</h2>
-<p><span class="math display">\[\frac{dN_1}{dt}=r_1N_1(\frac{K_1-N_1-\alpha_{12}N_2}{K_1})\]</span> <span class="math display">\[\frac{dN_2}{dt}=r_2N_1(\frac{K_2-N_2-\alpha_{21}N_1}{K_2})\]</span> ::: {.notes} alpha12 expresses the effect of one member of Population 2 on the growth rate of Population 1 alpha21 expresses the effect of one member of Population 1 on the growth rate of Population 2. :::</p>
+<p><span class="math display">\[\frac{dN_1}{dt}=r_1N_1(\frac{K_1-N_1-\alpha_{12}N_2}{K_1})\]</span> <span class="math display">\[\frac{dN_2}{dt}=r_2N_1(\frac{K_2-N_2-\alpha_{21}N_1}{K_2})\]</span></p>
+<aside class="notes">
+<p>alpha12 expresses the effect of one member of Population 2 on the growth rate of Population 1 alpha21 expresses the effect of one member of Population 1 on the growth rate of Population 2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="l-v-competition-model-1" class="slide level2">
 <h2>L-V competition model</h2>
@@ -935,7 +1241,6 @@
 </ul>
 <p><span class="math display">\[\frac{dN_1}{dt}=r_1N_1(\frac{K_1-N_1-\alpha_{12}N_2}{K_1})\]</span> <span class="math display">\[0=r_1N_1(\frac{K_1-N_1-\alpha_{12}N_2}{K_1})\]</span></p>
 <p><span class="math display">\[0=\frac{K_1-N_1-\alpha_{12}N_2}{K_1}\]</span></p>
-<p><span class="math display">\[0=K_1-N_1-\alpha_{12}N_2\]</span></p>
 <p><span class="math display">\[N_1=K_1-\alpha_{12}N_2\]</span></p>
 <aside class="notes">
 <p>The equilibrium is the population size at which the population stops growing. We can solve for this equilibrium by setting dN/dt for each species to zero and solving for N.</p>
@@ -974,8 +1279,25 @@
 </section>
 <section id="l-v-competition-model-3" class="slide level2">
 <h2>L-V competition model</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>N <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="co"># Species 1 wins</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>a_21 <span class="ot">&lt;-</span> <span class="fl">0.75</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>a_12 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>K_1 <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>K_2 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a>d1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">N =</span> N) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">mutate</span>(<span class="at">N2_iso =</span> K_2 <span class="sc">-</span> a_21<span class="sc">*</span>N,</span>
+<span id="cb7-11"><a href="#cb7-11"></a>         <span class="at">N1_iso =</span> K_1 <span class="sc">-</span> a_12<span class="sc">*</span>N,</span>
+<span id="cb7-12"><a href="#cb7-12"></a>         <span class="at">scenario =</span> <span class="st">"Species 1 wins"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="l-v-competition-model-4" class="slide level2">
+<h2>L-V competition model</h2>
 
-<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"><aside class="notes">
+<img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"><aside class="notes">
 <p>Simply put, for species to coexist stably, their effects on themselves must be greater than their effects on each other</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -989,48 +1311,301 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="quantifying-species-interactions-in-natural-systems" class="slide level2">
+<section id="epilogue" class="slide level2">
+<h2>Epilogue</h2>
+<ul>
+<li>If models keep being still are too unrealistic even after adding realistic features, why do we use them?</li>
+</ul>
+<aside class="notes">
+<p>Also, what do we not include here? Stochasticity, environmental dependence Interactions vary with space and time and environment and size…</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+<img data-src="images/g_box.png" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>Also, what do we not include here? Stochasticity, environmental dependence Interactions vary with space and time and environment and size…</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="quantifying-species-interactions-in-natural-systems" class="title-slide slide level1 center">
+<h1>3. Quantifying species interactions in natural systems</h1>
+
+</section>
+<section id="quantifying-species-interactions-in-natural-systems-1" class="slide level2">
 <h2>3. Quantifying species interactions in natural systems</h2>
 <ul>
-<li><p>Diet data</p></li>
-<li><p>Abundance data (e.g., from scientific trawl surveys)</p></li>
-<li><p>Apply statistical models</p></li>
+<li><p>We know how some ideas on how to model interactions mathematically</p></li>
+<li><p>How do we determine if and what species interactions occur in the wild?</p></li>
 </ul>
+<aside class="notes">
+<p>Diet data, trait-data, Abundance data (e.g., from scientific trawl surveys), Apply statistical models</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section class="slide level2">
-
+<section id="diet-data" class="slide level2">
+<h2>Diet data</h2>
 <ul>
-<li><p>Carrol paper?</p></li>
-<li><p>Neuenfeldt paper?</p></li>
-<li><p>Casini trophic cascade paper?</p></li>
+<li>We collect stomach content data for key species (read: commercial)</li>
 </ul>
+
+<img data-src="images/diet.png" class="r-stretch quarto-figure-center"></section>
+<section id="diet-data-example-baltic-cod" class="slide level2">
+<h2>Diet data: example Baltic cod</h2>
+</section>
+<section id="diet-data-example-baltic-cod-1" class="slide level2">
+<h2>Diet data: example Baltic cod</h2>
+<ul>
+<li>Bioenergetic models + diet information = cod grow worse today</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/eq1.png" style="width:55.0%"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/eq2.png" style="width:60.0%"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/eq3.png" style="width:50.0%"></p>
+</figure>
+</div>
+<div class="footer">
+<p>Neuenfeldt <em>et al</em> (2020) ICESJMS</p>
+</div>
+</section>
+<section id="diet-data-example-baltic-cod-2" class="slide level2">
+<h2>Diet data: example Baltic cod</h2>
+<ul>
+<li>Bioenergetic models + diet information = cod grow worse today</li>
+</ul>
+
+<img data-src="images/neuen.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Neuenfeldt <em>et al</em> (2020) ICESJMS</p>
+</div>
+</section>
+<section id="diet-data-example-baltic-cod-3" class="slide level2">
+<h2>Diet data: example Baltic cod</h2>
+
+<img data-src="images/skinny_cod.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Lunneryd 2020, Aqua Reports</p>
+</div>
+</section>
+<section id="predation-in-space" class="slide level2">
+<h2>Predation in space!</h2>
+<ul>
+<li>Diets, predators, and prey vary in space</li>
+</ul>
+
+<img data-src="images/goodman1.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Goodman <em>et al</em> (2022) Ecography</p>
+</div>
+<aside class="notes">
+<p>This paper also uses biomass data…</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="predation-in-space-1" class="slide level2">
+<h2>Predation in space!</h2>
+<ul>
+<li>Diets, predators, and prey vary in space</li>
+</ul>
+
+<img data-src="images/goodman2.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Goodman <em>et al</em> (2022) Ecography</p>
+</div>
+</section>
+<section id="predation-in-space-2" class="slide level2">
+<h2>Predation in space!</h2>
+<ul>
+<li>Diets, predators, and prey vary in space</li>
+</ul>
+
+<img data-src="images/goodman3.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Goodman <em>et al</em> (2022) Ecography</p>
+</div>
+</section>
+<section id="competition-1" class="slide level2">
+<h2>Competition</h2>
+<ul>
+<li><p>Sprat and herring affect the abundance of zooplankton</p></li>
+<li><p>In sprat, zooplankton in stomachs correlated with condition</p></li>
+</ul>
+
+<img data-src="images/casini_sprat.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Casini <em>et al</em> (2006) Oikos</p>
+</div>
+<aside class="notes">
+<p>Here we use in addition some other metric: condition! require other samples</p>
+<p>Also, we haven’t touched on experiments</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="species-interactions-in-fisheries-research" class="title-slide slide level1 center">
 <h1>4. Species interactions in fisheries research</h1>
+
+</section>
+<section id="species-interactions-in-fisheries-research-1" class="slide level2">
+<h2>4. Species interactions in fisheries research</h2>
 <ul>
-<li>Statistical / Mathematical approaches</li>
+<li>Statistical or Mathematical approaches</li>
 </ul>
 </section>
 <section id="in-stock-assessment" class="slide level2">
 <h2>In stock assessment</h2>
 <ul>
-<li><p>Natural mortality</p></li>
-<li><p>SMS model</p></li>
+<li><p>Mainly in terms of predation (natural mortality), not on growth parameters (competition!</p></li>
+<li><p>SMS model: catch-at-age, survey abundance, stomach data</p></li>
+<li><p>(statistical approach)</p></li>
 </ul>
+<div class="footer">
+<p>Lewy &amp; Vinther (2004) ICES CM</p>
+</div>
 </section>
-<section id="food-web-models-for-strategic-advice" class="slide level2">
-<h2>Food web models for strategic advice</h2>
+<section id="natural-mortality-rates" class="slide level2">
+<h2>Natural mortality rates</h2>
+
+<img data-src="images/sms.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Lewy &amp; Vinther (2004) ICES CM</p>
+</div>
+</section>
+<section id="food-web-models-strategic-advice" class="slide level2">
+<h2>Food web models: strategic advice</h2>
 <ul>
-<li><p>Based on “first principles”</p></li>
-<li><p>Ken Andersen</p></li>
-<li><p>mizer graphical abstract</p></li>
+<li>Size-spectrum models</li>
 </ul>
 
-<img data-src="images/big_fish.png" style="width:75.0%" class="r-stretch"><ul>
-<li>CHECK SLIDES</li>
-<li>CHECK NOTES FROM VALE MEETING</li>
-</ul>
+<img data-src="images/blanch3.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Blanchard et al (2017) TREE</p>
+</div>
+<aside class="notes">
+<p>Read the boxes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="food-web-models-strategic-advice-1" class="slide level2">
+<h2>Food web models: strategic advice</h2>
+
+<img data-src="images/concept_figure.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Lindmark et al (2022) GCB; Scott et al (2014) Methods in Ecology &amp; Evolution; Andersen (2019) Princeton University Press</p>
+</div>
+<aside class="notes">
+<p>strategic vs tactical, Based on “first principles”, higher independence</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="food-web-models-strategic-advice-2" class="slide level2">
+<h2>Food web models: strategic advice</h2>
+
+<img data-src="images/blanch1.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Blanchard et al (2014) Journal of Applied Ecology</p>
+</div>
+<aside class="notes">
+<p>strategic vs tactical</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="food-web-models-strategic-advice-3" class="slide level2">
+<h2>Food web models: strategic advice</h2>
+
+<img data-src="images/blanch2.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Blanchard et al (2014) Journal of Applied Ecology</p>
+</div>
+<aside class="notes">
+<p>strategic vs tactical</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="mathematical-or-statistical" class="slide level2">
+<h2>Mathematical or statistical?</h2>
+<p><img data-src="images/whynotboth.png" data-fig-align="center"> ::: {.notes} Many of these models are based upon statistical techniques and are good at assessing the current state and making short-term predictions; however, as they do not model interactions between stocks, they lack predictive power on longer timescales. Additionally, there are size-based multi-species models that represent key biological processes and consider interactions between stocks such as predation and competition for resources. Due to the complexity of these models, they are difficult to fit to data, and so many size-based multi-species models depend upon single-species models where they exist, or ad hoc assumptions when they do not, for parameters such as annual fishing mortality. :::</p>
+</section>
+<section id="question-time" class="slide level2">
+<h2>Question time!</h2>
 <div class="footer footer-default">
 
 </div>
@@ -1156,7 +1731,7 @@
         showNotes: false,
 
         // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: true,
+        autoPlayMedia: null,
 
         // Global override for preloading lazy-loaded iframes (null/true/false)
         preloadIframes: null,
