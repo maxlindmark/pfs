@@ -720,7 +720,7 @@
 <section id="species-interactions-1" class="slide level2">
 <h2>2. Species interactions</h2>
 <ul>
-<li><p><strong>Predation]</strong>[parasitism] (-, +)</p></li>
+<li><p><strong>Predation</strong>[parasitism] (-, +)</p></li>
 <li><p><strong>Competition</strong> (-, -)</p></li>
 <li><p>Mutualism (+, +)</p></li>
 <li><p>Amensialism (0, -)</p></li>
@@ -983,12 +983,11 @@
 <section id="a-famous-example" class="slide level2">
 <h2>A famous example</h2>
 <ul>
-<li>Lynx and hare data compiled by Elton<sup>1</sup></li>
+<li>Lynx and hare data compiled by Elton</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/lynx_hare.png"></p>
-</figure>
+
+<img data-src="images/lynx_hare.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>MacLulich after Elton 1925</p>
 </div>
 <aside class="notes">
 <p>Changes in the abundance of Lynx (Lynx canadensis) [top] and various prey species such as Snowshoe Hare (Lepus americanus) are documented in records of the numbers of pelts brought into the Hudson Bay Company. Note that the Lynx cycle peaks slightly later than the hare cycle. This suggests a hypothesis that an abundance of hares feeds an increase in the number of lynx, which in turn depresses the number of hare and so on. [Unfortunately, hares also cycle in the absence of lynx]. The original data set was compiled by Charles Elton, and is notable as one of the longest time series in ecology.</p>
@@ -1003,7 +1002,7 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Elton 1927</p></li></ol></aside></section>
+</section>
 <section id="other-predator-prey-models" class="slide level2">
 <h2>Other predator-prey models</h2>
 <ul>
@@ -1088,8 +1087,8 @@
 </section>
 <section id="rosenzweig-and-macarthur" class="slide level2">
 <h2>Rosenzweig and MacArthur</h2>
-<p><span class="math display">\[\frac{dN}{dt}=r N(1-\alpha N) - \frac{\alpha N}{1+\alpha h N}P\]</span></p>
-<p><span class="math display">\[\frac{dP}{dt}=e\frac{\alpha N}{1+\alpha h N}P -m P\]</span></p>
+<p><span class="math display">\[\frac{dN}{dt}=r N(1-\alpha N) - \frac{a N}{1 + a h N}P\]</span></p>
+<p><span class="math display">\[\frac{dP}{dt}=e\frac{a N}{1 + a h N}P -m P\]</span></p>
 <aside class="notes">
 <p>What’s going on here? Negative carrying capacity and type II</p>
 <style type="text/css">
@@ -1150,7 +1149,10 @@
 <li>Paradox of enrichment!</li>
 </ul>
 
-<img data-src="images/paradox.png" class="r-stretch quarto-figure-center"><aside class="notes">
+<img data-src="images/paradox.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Rosenzweig (1971) American Naturalist</p>
+</div>
+<aside class="notes">
 <p>In each case, increasing the supply of limiting nutrients or energy tends to destroy the steady state. Thus man must be very careful in attempting to enrich an ecosystem in order to increase its food yield. There is a real chance that such activity may result in decimation of the food species that are wanted in greater abundance.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1299,6 +1301,12 @@
 
 <img data-src="ecological_interactions_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"><aside class="notes">
 <p>Simply put, for species to coexist stably, their effects on themselves must be greater than their effects on each other</p>
+<p>To determine the outcome of competition, we must be able to find the ZNGI lines and the initial sizes of each population and graph them. We can graph the populations of the two species at any time by a point on a graph. Population 1 should always be plotted on the x-axis and Population 2 is on the y-axis. If the point falls below (Population 1) and/or to the left (Population 2) of a species??? isocline, that population will continue to increase. If the point falls above (Population 1) and/or to the right (Population 2) of a species??? isocline, that population will decrease. This will continue to occur as the coupled populations change sizes, and the point describing the two populations will trace some trajectory across the graph, eventually reaching an equilibrium of coexistence or competition exclusion.</p>
+<ol start="2" type="1">
+<li>Unstable coexistence (one species will “win” but which wins depends upon initial conditions or the direction of even the slightest perturbation from an unstable equilibrium for coexistence)</li>
+</ol>
+<p>https://www.uwyo.edu/dbmcd/popecol/marlects/lect20.html</p>
+<p>https://bio.libretexts.org/Courses/Gettysburg_College/01%3A_Ecology_for_All/15%3A_Competition/15.05%3A_15.5_Quantifying_Competition_Using_the_Lotka-Volterra_Model</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1623,7 +1631,6 @@
 
 </div>
 </section></section>
-
     </div>
   </div>
 

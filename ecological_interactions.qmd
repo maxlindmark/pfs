@@ -381,7 +381,7 @@ p1 + theme(aspect.ratio = 1/2)
 
 ## 2. Species interactions
 
-* **Predation]**[parasitism] (-, +)
+* **Predation**[parasitism] (-, +)
 
 * **Competition** (-, -)
 
@@ -575,9 +575,13 @@ lv_results %>%
 
 ## A famous example
 
-* Lynx and hare data compiled by Elton^[Elton 1927]
+* Lynx and hare data compiled by Elton
 
 ![](images/lynx_hare.png){fig-align="center"}
+
+::: footer
+MacLulich after Elton 1925
+:::
 
 ::: {.notes}
 Changes in the abundance of Lynx (Lynx canadensis) [top] and various prey species such as Snowshoe Hare (Lepus americanus) are documented in records of the numbers of pelts brought into the Hudson Bay Company. Note that the Lynx cycle peaks slightly later than the hare cycle. This suggests a hypothesis that an abundance of hares feeds an increase in the number of lynx, which in turn depresses the number of hare and so on. [Unfortunately, hares also cycle in the absence of lynx]. The original data set was compiled by Charles Elton, and is notable as one of the longest time series in ecology.
@@ -676,9 +680,9 @@ Rosenzweig & MacArthur (1963) American Naturalist
 
 ## Rosenzweig and MacArthur
 
-$$\frac{dN}{dt}=r N(1-\alpha N) - \frac{\alpha N}{1+\alpha h N}P$$
+$$\frac{dN}{dt}=r N(1-\alpha N) - \frac{a N}{1 + a h N}P$$
 
-$$\frac{dP}{dt}=e\frac{\alpha N}{1+\alpha h N}P -m P$$
+$$\frac{dP}{dt}=e\frac{a N}{1 + a h N}P -m P$$
 
 ::: {.notes}
 What's going on here? Negative carrying capacity and type II
@@ -727,6 +731,10 @@ A damped oscillation means an oscillation that fades away with time. Eventually 
 * Paradox of enrichment!
 
 ![](images/paradox.png){fig-align="center"}
+
+::: footer
+Rosenzweig (1971) American Naturalist
+:::
 
 ::: {.notes}
 In each case, increasing the supply of limiting nutrients or energy tends
@@ -908,6 +916,14 @@ ggplot(data = d) +
 
 ::: {.notes}
 Simply put, for species to coexist stably, their effects on themselves must be greater than their effects on each other
+
+To determine the outcome of competition, we must be able to find the ZNGI lines and the initial sizes of each population and graph them. We can graph the populations of the two species at any time by a point on a graph. Population 1 should always be plotted on the x-axis and Population 2 is on the y-axis. If the point falls below (Population 1) and/or to the left (Population 2) of a species??? isocline, that population will continue to increase. If the point falls above (Population 1) and/or to the right (Population 2) of a species??? isocline, that population will decrease. This will continue to occur as the coupled populations change sizes, and the point describing the two populations will trace some trajectory across the graph, eventually reaching an equilibrium of coexistence or competition exclusion. 
+
+2) Unstable coexistence (one species will "win" but which wins depends upon initial conditions or the direction of even the slightest perturbation from an unstable equilibrium for coexistence) 
+
+https://www.uwyo.edu/dbmcd/popecol/marlects/lect20.html
+
+https://bio.libretexts.org/Courses/Gettysburg_College/01%3A_Ecology_for_All/15%3A_Competition/15.05%3A_15.5_Quantifying_Competition_Using_the_Lotka-Volterra_Model 
 :::
 
 ## Epilogue
