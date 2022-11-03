@@ -1117,6 +1117,7 @@ strategic vs tactical
 ## Mathematical or statistical?
 
 ![](images/whynotboth.png){fig-align="center"}
+
 ::: {.notes}
 Many of these models are based upon statistical techniques and are good at assessing the current state and making short-term predictions; however, as they do not model interactions between stocks, they lack predictive power on longer timescales. Additionally, there are size-based multi-species models that represent key biological processes and consider interactions between stocks such as predation and competition for resources. Due to the complexity of these models, they are difficult to fit to data, and so many size-based multi-species models depend upon single-species models where they exist, or ad hoc assumptions when they do not, for parameters such as annual fishing mortality.
 :::
